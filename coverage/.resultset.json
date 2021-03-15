@@ -1,0 +1,222 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/models/user.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/users_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/welcome_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/users_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/welcome_controller.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1615851349
+  },
+  "Cucumber Features": {
+    "coverage": {
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/models/user.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/users_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/welcome_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/users_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/welcome_controller.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1615851843
+  }
+}

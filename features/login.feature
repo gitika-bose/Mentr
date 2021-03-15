@@ -20,3 +20,7 @@ Scenario: mentor can find and enter login page
   When I enter "bob@mentr.me" in the "email" feild
   And I enter "bob1876" in the "password" feild
   Then I should be on the "bob@mentr.me" user page
+
+Scenario: user can logout
+  When I click "logout"
+  Then I should be on login page
