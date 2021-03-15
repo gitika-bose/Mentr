@@ -14,8 +14,11 @@
 
 #### In Development (Tests) 
 1. Run "bundle install" 
-2. Run "rake cucumber" to test all user stories 
-3. Run "bundle exec rspec" to test all functionality 
+2. Run "yarn install"
+3. Run "rails webpacker:install"
+4. Run "rake cucumber" to test all user stories 
+5. Run "bundle exec rspec" to test all functionality 
+6. Run "rails s" to test functionality locally
 
 ## Heroku Link 
 https://polar-forest-34288.herokuapp.com/
