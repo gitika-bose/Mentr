@@ -9,15 +9,11 @@ Background: one mentor is using the site
     | email                   | password            |
     | bob@mentr.me            | bob1876             |
     | bil@mentr.me            | PoPcornHorse        |
-    | eric@mentr.me           | 1234                |
+    | eric@mentr.me           | 1234567             |
     | john23@mentr.me         | QWERTY              |
     | dillen@mentr.me         | PassWord$           |
 
   And  I am on the login page
-
-Scenario: mentor can login
-  When I sign in with correct credentials
-  Then I should be on the user page
 
 Scenario: mentor can access profile
   When I click "profile"

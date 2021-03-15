@@ -12,6 +12,9 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
     visit path_to(page_name)
   end
 
+#When /^(?:|I )sign in with correct credentials$/ do
+#end
+
 Then /^(?:|I )should be on (.+)$/ do |page_name|
     current_path = URI.parse(current_url).path
     if current_path.respond_to? :should
@@ -19,4 +22,8 @@ Then /^(?:|I )should be on (.+)$/ do |page_name|
     else
       assert_equal path_to(page_name), current_path
     end
+end
+
+Then /(.*) seed users should exist/ do | n_seeds |
+    User.count.should be n_seeds.to_i
 end

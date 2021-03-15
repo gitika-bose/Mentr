@@ -9,18 +9,17 @@ Background: a few mentors and mentees are using the site
     | email                   | password            |
     | bob@mentr.me            | bob1876             |
     | bil@mentr.me            | PoPcornHorse        |
-    | eric@mentr.me           | 1234                |
+    | eric@mentr.me           | 12334567772         |
     | john23@mentr.me         | QWERTY              |
-    | dillen@mentr.me         | PassWord$           |
+    | dillen@mentr.me         | PassWord            |
 
   And  I am on the login page
   Then 5 seed users should exist
 
-Scenario: mentor can find and enter login page
-  When I enter "bob@mentr.me" in the "email" feild
-  And I enter "bob1876" in the "password" feild
-  Then I should be on the "bob@mentr.me" user page
+Scenario: mentor can login
+  When I sign in with correct credentials
+  Then I should be on the user page
 
 Scenario: user can logout
-  When I click "logout"
+  When I logout
   Then I should be on login page
