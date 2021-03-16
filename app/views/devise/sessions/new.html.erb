@@ -4,12 +4,12 @@
 
   <div class="field">
     <%= f.label :login %><br />
-    <%= f.text_field :login %>
+    <%= f.text_field :login, id: "username_email_login" %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", id: "password_login" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -20,7 +20,7 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", id: "login_button"%>
   </div>
 <% end %>
 
