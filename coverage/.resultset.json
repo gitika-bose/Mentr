@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/models/user.rb": {
+      "/home/jaksaf/ase/mentr/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -27,26 +27,26 @@
           null
         ]
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/models/application_record.rb": {
+      "/home/jaksaf/ase/mentr/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/application_helper.rb": {
+      "/home/jaksaf/ase/mentr/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/users_helper.rb": {
+      "/home/jaksaf/ase/mentr/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/users_controller.rb": {
+      "/home/jaksaf/ase/mentr/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -56,7 +56,7 @@
           null
         ]
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/application_controller.rb": {
+      "/home/jaksaf/ase/mentr/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -71,30 +71,7 @@
           null
         ]
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/mailers/application_mailer.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/jobs/application_job.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/channels/application_cable/connection.rb": {
+      "/home/jaksaf/ase/mentr/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -104,35 +81,58 @@
         "branches": {
         }
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/channels/application_cable/channel.rb": {
+      "/home/jaksaf/ase/mentr/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
           0,
           0
+        ],
+        "branches": {
+        }
+      },
+      "/home/jaksaf/ase/mentr/app/jobs/application_job.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/jaksaf/ase/mentr/app/mailers/application_mailer.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null
         ],
         "branches": {
         }
       }
     },
-    "timestamp": 1615864143
+    "timestamp": 1615866284
   },
   "Cucumber Features": {
     "coverage": {
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/models/user.rb": {
+      "/home/jaksaf/ase/mentr/app/models/user.rb": {
         "lines": [
           1,
           1,
           1,
           1,
           1,
-          4,
+          12,
           null,
           null,
           1,
-          2,
-          2,
-          2,
+          7,
+          7,
+          7,
           0,
           0,
           null,
@@ -145,41 +145,41 @@
           null
         ]
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/models/application_record.rb": {
+      "/home/jaksaf/ase/mentr/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/application_controller.rb": {
+      "/home/jaksaf/ase/mentr/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
           null,
           1,
           1,
-          7,
-          7,
-          7,
-          7,
+          30,
+          30,
+          30,
+          30,
           null,
           null
         ]
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/application_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/users_helper.rb": {
+      "/home/jaksaf/ase/mentr/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/users_controller.rb": {
+      "/home/jaksaf/ase/mentr/app/helpers/users_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/jaksaf/ase/mentr/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -189,30 +189,7 @@
           null
         ]
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/mailers/application_mailer.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/jobs/application_job.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/channels/application_cable/connection.rb": {
+      "/home/jaksaf/ase/mentr/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -222,17 +199,40 @@
         "branches": {
         }
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/channels/application_cable/channel.rb": {
+      "/home/jaksaf/ase/mentr/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
           0,
           0
+        ],
+        "branches": {
+        }
+      },
+      "/home/jaksaf/ase/mentr/app/jobs/application_job.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/jaksaf/ase/mentr/app/mailers/application_mailer.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null
         ],
         "branches": {
         }
       }
     },
-    "timestamp": 1615864156
+    "timestamp": 1615866274
   }
 }
