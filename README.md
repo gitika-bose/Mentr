@@ -17,15 +17,17 @@
 2. Run "yarn install"
 3. Run "rails webpacker:install"
 4. Run "rake db:migrate"
-5. Run "rake cucumber" to test all user stories 
-6. Run "bundle exec rspec" to test all functionality 
-7. Run "rails s" to test functionality locally
+5. Run "rake cucumber" to test all user stories. Missing coverage can be attributed to default created files.
+7. Run "bundle exec rspec" to test all functionality 
+8. Run "rails s" to test functionality locally
 
 ## Heroku Link 
 https://polar-forest-34288.herokuapp.com/
 
 ## Github Repo
 https://github.com/gitika-bose/Mentr
+
+Tag (for proj-iter1): v1.0
 
 ## Summary
 
