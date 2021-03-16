@@ -14,4 +14,13 @@ RSpec.describe User, type: :model do
       end
     end
   end
+  describe 'bad new user add' do
+    context 'add git@gmail.com' do
+      it 'missing username' do
+        User.create(email:"git@gmail.com", password: "yogurt1234")
+        @user = User.find_by_email("gitika.bose@gmail.com")
+        expect(@user).to eq nil
+      end
+    end
+  end
 end
