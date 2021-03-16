@@ -16,6 +16,8 @@ module NavigationHelpers
         when /^the (Mentre )?home\s?page$/ then root_path
         when /^the (Mentre )?login\s?page$/ then new_user_session_path
         when /^the (Mentre )?user\s?page$/ then user_profile_path(User.find_by_username("bob"))
+        when /^the (Mentre )?my\sprofile\s?page$/ then user_profile_path(User.find_by_username("bob"))
+        when /^the (Mentre )?edit\sprofile\s?page$/ then edit_user_path(User.find_by_username("bob"))
     
         # Add more mappings here.
         # Here is an example that pulls values out of the Regexp:

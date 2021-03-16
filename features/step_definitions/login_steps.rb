@@ -18,17 +18,21 @@ When /^(?:|I )sign in with correct credentials$/ do
 end
 
 When /^(?:|I )click sign in$/ do
-    click_button("login_button")
+  click_button("login_button")
 end
 
 When /^(?:|I )login$/ do
-    fill_in("username_email_login", :with => "bob@mentr.me")
-    fill_in("password_login", :with => "bob1876")
-    click_button("login_button")
+  fill_in("username_email_login", :with => "bob@mentr.me")
+  fill_in("password_login", :with => "bob1876")
+  click_button("login_button")
 end
 
 When /^(?:|I )click my profile$/ do
-    click_link("my_profile_link")
+  click_link("my_profile_link")
+end
+
+When /^(?:|I )click edit profile$/ do
+  click_link("edit_profile_link")
 end
 
 When /^(?:|I )(?:|click )logout$/ do
@@ -44,6 +48,6 @@ Then /^(?:|I )should be on (.+)$/ do |page_name|
     end
 end
 
-Then /(.*) seed users should exist/ do | n_seeds |
+Then /(.*)(?: seed)? users? should exist/ do | n_seeds |
     User.count.should be n_seeds.to_i
 end

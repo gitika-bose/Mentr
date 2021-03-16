@@ -6,15 +6,22 @@ Feature: user can navigate to and edit their profile
 Background: one mentor is using the site
   Given the following users exists
 
-    | email                   | password            |
-    | bob@mentr.me            | bob1876             |
-    | bil@mentr.me            | PoPcornHorse        |
-    | eric@mentr.me           | 1234567             |
-    | john23@mentr.me         | QWERTY              |
-    | dillen@mentr.me         | PassWord$           |
+    | username | email                   | password            |
+    | bob      | bob@mentr.me            | bob1876             |
+    | bil      | bil@mentr.me            | PoPcornHorse        |
+    | eric     | eric@mentr.me           | 12334567772         |
+    | john     | john23@mentr.me         | QWERTY              |
+    | dillen   | dillen@mentr.me         | PassWord            |
 
   And  I am on the login page
+  Then 5 seed users should exist
 
 Scenario: mentor can access profile
-  When I click "profile"
-  Then I should be on the profile page
+  When I login
+  And I click my profile
+  Then I should be on the my profile page
+
+Scenario: mentor can access edit profile
+  When I login
+  And I click edit profile
+  Then I should be on the edit profile page
