@@ -5,10 +5,10 @@ RSpec.describe User, type: :model do
     context 'add gitika.bose@gmail.com' do
       it 'no users initially' do
         @user = User.find_by_email("gitika.bose@gmail.com")
-        expect(@user).to eq nil 
+        expect(@user).to eq nil
       end
       it 'one user added to database' do
-        User.create(email:"gitika.bose@gmail.com", password: "yogurt5678")
+        User.create(email:"gitika.bose@gmail.com", username: "gitikabose", password: "yogurt5678")
         @user = User.find_by_email("gitika.bose@gmail.com")
         expect(@user.email).to eq "gitika.bose@gmail.com"
       end

@@ -16,9 +16,10 @@
 1. Run "bundle install" 
 2. Run "yarn install"
 3. Run "rails webpacker:install"
-4. Run "rake cucumber" to test all user stories 
-5. Run "bundle exec rspec" to test all functionality 
-6. Run "rails s" to test functionality locally
+4. Run "rake db:migrate"
+5. Run "rake cucumber" to test all user stories 
+6. Run "bundle exec rspec" to test all functionality 
+7. Run "rails s" to test functionality locally
 
 ## Heroku Link 
 https://polar-forest-34288.herokuapp.com/
@@ -31,6 +32,6 @@ https://github.com/gitika-bose/Mentr
 SaaS Product Features 
 * Welcome page with "sign up" and "sign in" visible to public
 * The SaaS product contains a sign up and sign in page, allowing mentors and mentees to make an account. 
-* Each mentor/mentee has a profile with their personal information viewable only to themselves. 
-* Users can edit their username or password as needed 
+* Each mentor/mentee has a profile with their personal information (eg. username) viewable only to themselves. 
+* Users can edit their username, email, or password as needed 
 * Users can delete their accounts 
