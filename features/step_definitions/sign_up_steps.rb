@@ -41,6 +41,17 @@ When /^(?:|I )change my password$/ do
   click_button("confirmation_change_password")
 end
 
+When /^(?:|I )delete my account$/ do
+    click_link("edit_profile_link")
+    fill_in("username_edit", :with => "bob")
+    fill_in("email_edit", :with => "bob@mentre.me")
+    fill_in("current_password_edit", :with => "bob1876")
+    click_button("delete_account_button")
+    page.driver.browser.key_down(:enter).key_up(:enter).perform
+    #page.accept_alert { click_button "delete_account_button" }
+    #page.evaluate_script("window.confirm = function() {return true; }")
+  end
+
 Then /^(?:I )should fail the sign up$/ do
   if page.respond_to? :should
       page.should have_content("error")

@@ -37,6 +37,6 @@ Scenario: A user should be able to update their password
   Then I should fail the login
 
 Scenario: A user should be able to cancel their account
-  When I log into my new account
+  When I login
   And I delete my account
   Then 5 users should exist
