@@ -32,6 +32,9 @@ https://github.com/gitika-bose/Mentr
 SaaS Product Features 
 * Welcome page with "sign up" and "sign in" visible to public
 * The SaaS product contains a sign up and sign in page, allowing mentors and mentees to make an account. 
+* SaaS product sign up ensures that users are unique
 * Each mentor/mentee has a profile with their personal information (eg. username) viewable only to themselves. 
 * Users can edit their username, email, or password as needed 
 * Users can delete their accounts 
+
+The above user login functionality is vital for the mentor profiles we intend to create along with the interaction between mentors and mentees!
