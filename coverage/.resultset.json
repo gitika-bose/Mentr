@@ -12,11 +12,11 @@
           null,
           null,
           1,
+          1,
+          1,
           0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
           null,
           null,
           null,
@@ -41,12 +41,6 @@
         ]
       },
       "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/users_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/welcome_helper.rb": {
         "lines": [
           1,
           null
@@ -100,14 +94,6 @@
         "branches": {
         }
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/welcome_controller.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
@@ -129,7 +115,7 @@
         }
       }
     },
-    "timestamp": 1615862999
+    "timestamp": 1615864143
   },
   "Cucumber Features": {
     "coverage": {
@@ -193,12 +179,6 @@
           null
         ]
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/welcome_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
       "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/users_controller.rb": {
         "lines": [
           1,
@@ -232,14 +212,6 @@
         "branches": {
         }
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/welcome_controller.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
@@ -261,6 +233,6 @@
         }
       }
     },
-    "timestamp": 1615863007
+    "timestamp": 1615864156
   }
 }
