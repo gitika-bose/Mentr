@@ -4,7 +4,7 @@ require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "pat
 
 Given /the following users exists/ do |user_table|
     user_table.hashes.each do |user|
-        User.create(email: user["email"], password: user["password"])
+        User.create(username: user["username"], email: user["email"], password: user["password"])
     end
 end
 
@@ -12,8 +12,28 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
     visit path_to(page_name)
   end
 
-#When /^(?:|I )sign in with correct credentials$/ do
-#end
+When /^(?:|I )sign in with correct credentials$/ do
+    fill_in("username_email_login", :with => "bob@mentr.me")
+    fill_in("password_login", :with => "bob1876")
+end
+
+When /^(?:|I )click sign in$/ do
+    click_button("login_button")
+end
+
+When /^(?:|I )login$/ do
+    fill_in("username_email_login", :with => "bob@mentr.me")
+    fill_in("password_login", :with => "bob1876")
+    click_button("login_button")
+end
+
+When /^(?:|I )click my profile$/ do
+    click_link("my_profile_link")
+end
+
+When /^(?:|I )(?:|click )logout$/ do
+    click_link("logout_link")
+end
 
 Then /^(?:|I )should be on (.+)$/ do |page_name|
     current_path = URI.parse(current_url).path
