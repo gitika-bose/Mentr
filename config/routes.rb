@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  get '/catalog', to: 'catalog#index'
+  get 'homepage/index'
   root 'users#profile'
   devise_for :users
   resources :users do
-    # modify to using match, 
+    # modify to using match,
     # to & as for REST
     get 'profile'
   end
