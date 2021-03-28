@@ -1,8 +1,22 @@
 <div class="parallax">
     <div class="title">Mentr.me</div>
+    <div class="subtitle">Learn Compassionately.</div>
 </div>
 <div class="container">
-    What is Mentr.me? Mentr.me is a platform that allows students to be mentored by 
-    an industry professional of their choice in return for a charitable donation.
-    <%= render 'components/card_row', title: 'Hello', text: 'Goodbye' %>
+    <div class="largespace"></div>
+    <div>What is Mentr.me? Mentr.me is a platform that allows students to be mentored by an industry professional of their choice in return for a charitable donation. </div>
+    <div class="largespace"></div>
+    <%= render 'components/card_row', text: 'We connect recents graduates and industry professionals who have accrued job-related knowledge to students seeking their advice, generating revenue for charities you trust.', img: 'https://i.imgur.com/zmka3gC.png' %>
+    <div class="space"></div>
+    <%= render 'components/card_row_2', text: 'We feature public tutor profiles and advanced search functionality to allow users to handpick the perfect mentor.', img: 'https://i.imgur.com/rZ63jxw.png' %>
+    <div class="space"></div>
+    <%= render 'components/card_row', text: 'We take care of donation authentication to make your tutoring experience as smooth as possible.', img: 'https://i.imgur.com/Rsory0x.png' %>
+    <div class="space"></div>
+    <%= render 'components/card_row_2', text: 'We provide a wide variety of mentors that align with your personal experience, imbuing your charitable actions with a personal touch.', img: 'https://i.imgur.com/5TF7xQl.png' %>
+    <div class="largespace"></div>
+    <div class="question">Ready to learn?</div>
+    <div class="explain">
+        <%= link_to "Register", new_user_registration_path, :class => 'navbar-link', id: "sign_up_link"  %>
+    </div>
+    <div class="largespace"></div><div class="largespace"></div>
 </div>

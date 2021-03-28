@@ -10,13 +10,13 @@
 
 <%= content_tag :div, id: id, class: "card #{classes}", style: style do %>
   <div class="row no-gutters">
-    <div class="col-md-4">
-      <%= content_tag :img, src: img, class: "card-img-top", alt: alt do %><% end %>
-    </div>
     <div class="col-md-8">
       <div class="card-body">
         <p class="card-text"><%= text %></p>
       </div>
+    </div>
+    <div class="col-md-4">
+      <%= content_tag :img, src: img, class: "card-img-top", alt: alt do %><% end %>
     </div>
   </div>
 <% end %>
