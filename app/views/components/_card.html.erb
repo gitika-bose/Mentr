@@ -1,0 +1,18 @@
+<% title = local_assigns.fetch(:title, 'Card Title') %>
+<% alt = local_assigns.fetch(:alt, 'card image') %>
+<% img = local_assigns.fetch(:img, '#') %>
+<% text = local_assigns.fetch(:text, "Some quick example text to build on the card title and make up the bulk of the card's content.") %>
+<% link = local_assigns.fetch(:link, '#') %>
+<% btn = local_assigns.fetch(:btn, 'Click here') %>
+<% style = local_assigns.fetch(:style, '') %>
+<% id = local_assigns.fetch(:id, '') %>
+<% classes = local_assigns.fetch(:classes, '') %>
+
+<%= content_tag :div, id: id, class: "card #{classes}", style: style do %>
+  <%= content_tag :img, src: img, class: "card-img-top", alt: alt do %><% end %>
+  <div class="card-body">
+    <h5 class="card-title"><%= title %></h5>
+    <p class="card-text"><%= text %></p>
+    <%= link_to btn, link, class: "btn btn-primary" %>
+  </div>
+<% end %>
