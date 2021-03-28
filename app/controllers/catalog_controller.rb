@@ -5,6 +5,6 @@ class CatalogController < ApplicationController
 
   def show
     id = params[:id] # retrieve movie ID from URI route
-    @user = User.find(id) 
+    @user = User.find(id)
   end
 end
