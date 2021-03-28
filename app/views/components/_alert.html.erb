@@ -1,0 +1,25 @@
+<% message = yield.presence || local_assigns.fetch(:message) %>
+
+<% return if message.blank? %>
+
+<% dismissible = local_assigns.fetch(:dismissable, true) %>
+<% dismissible_classes = dismissible ? 'alert-dismissable fade show' : '' %>
+
+<% type = local_assigns.fetch(:type, :primary) %>
+<% type_class = "alert-#{type}" %>
+
+<% allowed_types = {
+  notice: 'alert-info',
+  alert: 'alert-warning',
+  error: 'alert-danger',
+  primary: 'alert-primary'
+}.fetch(type) %>
+
+<%= content_tag :div, class: "alert #{type_class} #{dismissible_classes}", role: "alert" do %>
+  <% if dismissible %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <%= message %>
+  <% end %>
+<% end %>
