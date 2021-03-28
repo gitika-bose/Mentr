@@ -1,3 +1,27 @@
 // Place all the styles related to the homepage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "bootstrap/dist/css/bootstrap";
+
+.title {
+    padding-top: 50px;
+    text-align: center;
+    font: arial;
+    font-weight: bold;
+    font-size: 100px;
+    color: white;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("https://i.imgur.com/1da9QBm.png");
+  
+    /* Full height */
+    height: 900px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
