@@ -12,13 +12,13 @@
   </div>
 
   <div class="row">
-    <% @users.each do |user| %>
+    <% @mentors.each do |user| %>
       <div class="col-sm">
-        <%= render 'components/card', title: user.username, text: 'Subjects taught XYZ with experience working', img: 'https://imgur.com/EM2B1A8.png', link: catalog_path(user.id), btn: "More Info" %>
+        <%= render 'components/card', title: user.username, text: 'Subjects taught XYZ with experience working', img: 'https://imgur.com/EM2B1A8.png', link: catalog_path(user.user_id), btn: "More Info" %>
       </div>
     <% end %>
 
-    <% if @users.length%3 == 1%>
+    <% if @mentors.length%3 == 1%>
       <div class="col-sm">
         <div style="width:18rem"> </div>
       </div>
@@ -27,7 +27,7 @@
       </div>
     <% end %>
 
-    <% if @users.length%3 == 2%>
+    <% if @mentors.length%3 == 2%>
       <div class="col-sm">
         <div style="width:18rem"> </div>
       </div>
