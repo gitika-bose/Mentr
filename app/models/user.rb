@@ -15,6 +15,10 @@ class User < ApplicationRecord
     end
   end
 
+  def self.search(search)
+      search_string = "username LIKE '%" + search + "%'" 
+      users = User.where(search_string).or(User.where(email:search))
+  end
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
