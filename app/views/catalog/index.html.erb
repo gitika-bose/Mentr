@@ -1,12 +1,26 @@
-<h1>All Mentors</h1>
-<% @users.each do |user| %>
-  <div class="card" style="margin: 2rem">
-    <div class="card-body">
-      <h5 class="card-title"><%= user.username %></h5>
-      <h6 class="card-subtitle mb-2 text-muted"><%= user.email %></h6>
-      <p class="card-text">Subjects taught XYZ with experience working</p>
-      <a href="#" class="card-link">Contact</a>
-      <a href="<%= catalog_path(user.id) %>" class="card-link">More info</a>
-    </div>
+<div class="container">
+  <h1>All Mentors</h1>
+  <div class="row">
+    <% @users.each do |user| %>
+      <div class="col-sm">
+        <%= render 'components/card', title: user.username, text: 'Subjects taught XYZ with experience working', img: 'https://imgur.com/EM2B1A8.png', link: catalog_path(user.id), btn: "More Info" %>
+      </div>
+    <% end %>
+    
+    <% if @users.length%3 == 1%>
+      <div class="col-sm">
+        <div style="width:18rem"> </div>
+      </div>
+      <div class="col-sm">
+        <div style="width:18rem"> </div>
+      </div>
+    <% end %>
+
+    <% if @users.length%3 == 2%>
+      <div class="col-sm">
+        <div style="width:18rem"> </div>
+      </div>
+    <% end %>
+
   </div>
-  <% end %>
+</div>
