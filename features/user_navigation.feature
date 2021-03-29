@@ -18,8 +18,8 @@ Background: one mentor is using the site
 
 Scenario: mentor can access profile
   When I login
-  And I click my profile
-  Then I should be on the my profile page
+  And I click catalog
+  Then I should be on the catalog page
 
 Scenario: mentor can access edit profile
   When I login

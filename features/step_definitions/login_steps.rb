@@ -17,6 +17,11 @@ When /^(?:|I )sign in with correct credentials$/ do
     fill_in("password_login", :with => "bob1876")
 end
 
+When /^(?:|I )navigate to sign in$/ do
+  click_link("login_link")
+end
+
+
 When /^(?:|I )click sign in$/ do
   click_button("login_button")
 end
@@ -27,8 +32,8 @@ When /^(?:|I )login$/ do
   click_button("login_button")
 end
 
-When /^(?:|I )click my profile$/ do
-  click_link("my_profile_link")
+When /^(?:|I )click catalog$/ do
+  click_link("catalog_link")
 end
 
 When /^(?:|I )click edit profile$/ do

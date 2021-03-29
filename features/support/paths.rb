@@ -16,7 +16,7 @@ module NavigationHelpers
         when /^the (Mentre )?home\s?page$/ then root_path
         when /^the (Mentre )?login\s?page$/ then new_user_session_path
         when /^the (Mentre )?user\s?page$/ then user_profile_path(User.find_by_username("bob"))
-        when /^the (Mentre )?my\sprofile\s?page$/ then user_profile_path(User.find_by_username("bob"))
+        when /^the (Mentre )?catalog\s?page$/ then '/catalog'
         when /^the (Mentre )?edit\sprofile\s?page$/ then '/users/edit'
     
         # Add more mappings here.
