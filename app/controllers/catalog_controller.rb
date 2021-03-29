@@ -1,4 +1,6 @@
 class CatalogController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     if params[:search] != nil and params[:search] != ""
       @users = User.search(params[:search]);
