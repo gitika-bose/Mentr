@@ -10,7 +10,7 @@ class MentorsController < ApplicationController
   end
 
   def create
-    @mentor = Mentor.new(user: current_user)
+    @mentor = Mentor.new(mentor_params)
 
     if @mentor.save
       redirect_to catalog_index_path
@@ -25,9 +25,12 @@ class MentorsController < ApplicationController
   
   def update
     @mentor = Mentor.find_by user: current_user
+    puts "Updating mentor\n"
+    puts mentor_params
+    puts @mentor
 
-    if @mentor.update({})
-      redirect_to catalog_index_path
+    if @mentor.update(mentor_params)
+      redirect_to catalog_path(current_user.id)
     else
       render :edit
     end
@@ -38,6 +41,12 @@ class MentorsController < ApplicationController
     @mentor.destroy
 
     redirect_to catalog_index_path
+  end
+
+private
+  def mentor_params
+    puts params
+    ({:user => current_user}).merge(params.require(:mentor).permit(:profile, :linkedin, :location, :website, :company))
   end
 
 end
