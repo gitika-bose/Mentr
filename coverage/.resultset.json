@@ -1,167 +1,4 @@
 {
-  "RSpec": {
-    "coverage": {
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          1,
-          1,
-          0,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/application_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/catalog_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/homepage_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/helpers/users_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/users_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null
-        ]
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/homepage_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/mailers/application_mailer.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/catalog_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/channels/application_cable/channel.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      }
-    },
-    "timestamp": 1616986393
-  },
   "Cucumber Features": {
     "coverage": {
       "/Users/sharonjin/Desktop/mentr/app/models/user.rb": {
@@ -254,8 +91,29 @@
           null
         ]
       },
+      "/Users/sharonjin/Desktop/mentr/app/helpers/mentor_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/sharonjin/Desktop/mentr/app/helpers/mentors_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/sharonjin/Desktop/mentr/app/helpers/users_helper.rb": {
         "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/sharonjin/Desktop/mentr/app/models/mentor.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           1,
           null
         ]
@@ -274,6 +132,24 @@
           null,
           null,
           null
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sharonjin/Desktop/mentr/app/models/mentee.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sharonjin/Desktop/mentr/app/models/subject.rb": {
+        "lines": [
+          0,
+          0
         ],
         "branches": {
         }
@@ -300,6 +176,55 @@
         "branches": {
         }
       },
+      "/Users/sharonjin/Desktop/mentr/app/controllers/mentors_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/sharonjin/Desktop/mentr/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
@@ -321,6 +246,6 @@
         }
       }
     },
-    "timestamp": 1617049745
+    "timestamp": 1617050168
   }
 }
