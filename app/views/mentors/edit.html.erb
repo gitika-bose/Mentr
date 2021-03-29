@@ -34,4 +34,8 @@
 
     <% end %>
 
+    <h3>No Longer Want To Be Mentor?</h3>
+
+    <p> <%= button_to "Quit mentoring", mentor_path(@mentor), data: { confirm: "Are you sure?" }, method: :delete, id: "delete_mentor_account_button"%></p>
+
 </div>

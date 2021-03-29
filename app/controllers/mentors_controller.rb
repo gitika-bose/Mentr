@@ -24,13 +24,20 @@ class MentorsController < ApplicationController
   end
   
   def update
-    @mentor = Mentor.find(user: current_user)
+    @mentor = Mentor.find_by user: current_user
 
-    if @mentor.update()
-      redirect_to @mentor
+    if @mentor.update({})
+      redirect_to catalog_index_path
     else
       render :edit
     end
+  end
+
+  def destroy
+    @mentor = Mentor.find_by user: current_user
+    @mentor.destroy
+
+    redirect_to catalog_index_path
   end
 
 end
