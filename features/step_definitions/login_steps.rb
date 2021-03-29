@@ -36,6 +36,14 @@ When /^(?:|I )click catalog$/ do
   click_link("catalog_link")
 end
 
+When /^(?:|I )click become mentor$/ do
+  click_link("new_mentor_profile_link")
+end
+
+When /^(?:|I )click update mentor$/ do
+  click_link("edit_mentor_profile_link")
+end
+
 When /^(?:|I )click edit profile$/ do
   click_link("edit_profile_link")
 end

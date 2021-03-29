@@ -1,9 +1,9 @@
-Feature: Users should be able to sign up
-  
-  I am a mentee that would like to be tutored however I am easily
-  overwhelmed by complicated websites and often make mistakes. I 
-  would like to quickly and effortlessly create an account.
+Feature: users can become mentors and update mentor info
 
+  I am a user that would like to become a mentor. However,
+  this involves a lot of complicated communication to get
+  approved, and I want an easier way to sign up.
+  
 Background: a few mentors and mentees are using the site
   Given the following users exists
 
@@ -14,39 +14,39 @@ Background: a few mentors and mentees are using the site
     | john     | john23@mentr.me         | QWERTY              |
     | dillen   | dillen@mentr.me         | PassWord            |
 
-  And  I am on the login page
+  And I am on the catalog page
   Then 5 seed users should exist
 
-Scenario: A duplicate account is created
-  When I click sign up
-  And I fill in duplicate information
-  And I click register
-  Then I should fail the sign up
-
-Scenario: A user should be able to successfully sign up
-  When I click sign up
-  And I fill in new account information
-  And I click register
-  Then 6 users should exist
-
-Scenario: A user should sign up only as a mentee
-  When I click sign up
-  And I fill in new account information
-  And I click register
+Scenario: user can become mentor
+  When I login
+  And I click become mentor
+  And I add mentor info
+  And I click sign up as mentor button
   And I click catalog
-  And I search for kevin
+  And I search for bob
   And I click search
+  And I click more info
+  Then I should find tutor results
+
+Scenario: user can update mentor data
+  When I login
+  And I click become mentor
+  And I add mentor info
+  And I click sign up as mentor button
+  And I click update mentor
+  And I add mentor info
+  And I click save mentor button
+  And I click catalog
+  And I search for bob
+  Then I should find tutor results
+
+Scenario: user can delete mentor data
+  When I login
+  And I click become mentor
+  And I add mentor info
+  And I click sign up as mentor button
+  And I click update mentor
+  And I click quit mentor button
+  And I click catalog
+  And I search for bob
   Then I should not find tutor results
-
-Scenario: A user should be able to update their password
-  When I login
-  And I change my password
-  And I logout
-  And I navigate to sign in
-  And I login
-  Then I should fail the login
-
-Scenario: A user should be able to cancel their account
-  When I login
-  And I delete my account
-  Then 4 users should exist

@@ -18,6 +18,8 @@ module NavigationHelpers
         when /^the (Mentre )?user\s?page$/ then user_profile_path(User.find_by_username("bob"))
         when /^the (Mentre )?catalog\s?page$/ then '/catalog'
         when /^the (Mentre )?edit\sprofile\s?page$/ then '/users/edit'
+        when /^the (Mentre )?become\smentor\s?page$/ then '/mentors/new'
+        when /^the (Mentre )?update\smentor\s?page$/ then '/mentors/edit'
     
         # Add more mappings here.
         # Here is an example that pulls values out of the Regexp:

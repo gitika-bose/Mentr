@@ -17,25 +17,16 @@ Background: a few mentors and mentees are using the site
   And I am on the catalog page
   Then 5 seed users should exist
 
-Scenario: user can search all tutors
+Scenario: user can search tutor and view tutor info
   When I login
-  And I click catalog
-  And I click search
-  Then I should find all tutor results
-
-Scenario: user can search tutor
-  When I login
-  And I click catalog
-  And I search for bob
-  And I click search
-  Then I should find tutor results
-
-Scenario: user can view tutor info
-  When I login
+  And I click become mentor
+  And I add mentor info
+  And I click sign up as mentor button
   And I click catalog
   And I search for bob
   And I click search
   And I click more info
+  Then I should find tutor results
 
 Scenario: user can't search tutor
   When I login
