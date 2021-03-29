@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root 'homepage#index'
-
+  get 'mentors/new'
+  get 'mentors/edit'
+  
+  resources :mentors do
+  end
+  
   resources :catalog do
   end
 
