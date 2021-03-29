@@ -33,6 +33,7 @@ Scenario: A user should be able to update their password
   When I login
   And I change my password
   And I logout
+  And I navigate to sign in
   And I login
   Then I should fail the login
 

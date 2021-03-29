@@ -59,8 +59,8 @@ end
 
 Then /^(?:I )should fail the login$/ do
     if page.respond_to? :should
-        page.should have_content("Log in")
+        page.should have_content("Login")
     else
-      assert page.has_content?("Log in")
+      assert page.has_content?("Login")
     end
   end
