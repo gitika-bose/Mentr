@@ -12,19 +12,7 @@
   </head>
 
   <body>
-    <nav class="navbar">
-      <span>Mentr.me</span>
-      <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link', id: "edit_profile_link" %> |
-        <%= link_to 'My profile', user_profile_path(current_user.id), :class => 'navbar-link', id: "my_profile_link"%> |
-        <%= link_to 'Catalog', catalog_index_path, :class => 'navbar-link', id: "my_profile_link"%> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', id: "logout_link"%>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link', id: "sign_up_link"  %> |
-        <%= link_to "Login", new_user_session_path, :class => 'navbar-link', id: "login_link" %>
-      <% end %>
-    </nav>
+    <%= render 'components/navbar' %>
     <%= yield %>
   </body>
 </html>
