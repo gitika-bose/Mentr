@@ -1,6 +1,6 @@
 <%= content_tag :nav, class: "navbar navbar-expand-lg navbar-light" do %>
   <%= content_tag :a, class: "navbar-brand" do %>
-    <%= image_tag 'mentr.me.png', width: '200px'%>
+    <%= link_to image_tag('mentr.me.png', width: '200px'), homepage_index_path %>
   <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -19,7 +19,7 @@
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Catalog', catalog_index_path, class: 'nav-link', id: "my_profile_link" %>
+          <%= link_to 'Catalog', catalog_index_path, class: 'nav-link', id: "catalog_link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'nav-link', id: "logout_link" %>

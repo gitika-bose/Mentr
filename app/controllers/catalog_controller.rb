@@ -3,6 +3,11 @@ class CatalogController < ApplicationController
 
   def index
     @mentors = get_mentors
+
+    if params[:mentor] != nil and params[:mentor] != ""
+      UserMailer.with(:user => current_user, :mentor => User.find_by(id:params[:mentor])).book_email.deliver_now
+    end
+
     if params[:search] != nil and params[:search] != ""
       @mentors = @mentors.where("username LIKE ? ", "%#{params[:search]}%");
     else
