@@ -4,6 +4,7 @@ RSpec.describe UserMailer, type: :mailer do
   describe "email for a session booking" do
     User.create(username:"test_user1", email:"gitika.bose@gmail.com")
     User.create(username:"test_mentor1", email:"gb2606@columbia.edu")
+    UserController.params[:mentor] = User.find_by(username:"test_mentor1")
 
     let(:mail) { UserMailer.book_email }
 
