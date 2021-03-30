@@ -12,14 +12,14 @@ class SessionsController < ApplicationController
 
   def create
     if params[:mentor_id] != nil
-      UserMailer.with(:user => current_user, :mentor => User.find_by(id:params[:mentor_id])).book_email.deliver_now!
+      UserMailer.with(:user => current_user, :mentor => User.find_by(id:params[:mentor_id])).book_email.deliver_now
       if !(Mentee.find_by user: current_user)
         Mentee.create(user: current_user)
       end
       @mentee = Mentee.find_by user: current_user
       @mentor = Mentor.find_by user_id: params[:mentor_id]
       Session.request(@mentee, @mentor)
-      
+
       redirect_to sessions_show_path
     else
       redirect_to catalog_index_path
