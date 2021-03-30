@@ -5,6 +5,9 @@ class SessionsController < ApplicationController
     @sessions_as_mentor = Session.joins(:mentor).where("mentors.user_id = ?", current_user.id).all
     @sessions_as_mentee = Session.joins(:mentee).where("mentees.user_id = ?", current_user.id).all
 
+    @sessions_as_mentee.each do |session|
+      puts session.status
+    end
   end
 
   def create
@@ -23,8 +26,16 @@ class SessionsController < ApplicationController
     end
   end
 
-  def update
-#    @session = Session.find_by user: current_user
+  def approve
+    @session = Session.find(params[:session_id])
+    @session.accepted!
+    redirect_to sessions_show_path
+  end
+
+  def cancel
+    @session = Session.find(params[:session_id])
+    @session.terminated!
+    redirect_to sessions_show_path
   end
 
 end
