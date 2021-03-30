@@ -17,7 +17,7 @@
 2. Run "yarn install"
 3. Run "rails webpacker:install"
 4. Run "rake db:migrate"
-5. Run "rake cucumber" to test all user stories. Missing coverage can be attributed to default created files.
+5. Run "rake cucumber" to test all user stories
 7. Run "bundle exec rspec" to test all functionality 
 8. Run "rails s" to test functionality locally
 
@@ -27,8 +27,8 @@ https://polar-forest-34288.herokuapp.com/
 ## Github Repo
 https://github.com/gitika-bose/Mentr
 
-Tag (for proj-iter1): v1.0
-Tag (for proj-iter2): v2.0
+* Tag (for proj-iter1): v1.0
+* Tag (for proj-iter2): v2.0
 
 ## Summary
 
@@ -45,3 +45,7 @@ SaaS Product Features
 * Users can delete their accounts 
 
 The above user login functionality is vital for the mentor profiles we intend to create along with the interaction between mentors and mentees!
+
+## Coverage
+
+Missing coverage can be attributed to default created files.
