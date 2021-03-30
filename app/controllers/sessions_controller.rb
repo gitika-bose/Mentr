@@ -9,8 +9,7 @@ class SessionsController < ApplicationController
 
   def create
     if params[:mentor_id] != nil
-      puts "IM IN THERE"
-      #UserMailer.with(:user => current_user, :mentor => User.find_by(id:params[:mentor_id])).book_email.deliver_now
+      UserMailer.with(:user => current_user, :mentor => User.find_by(id:params[:mentor_id])).book_email.deliver_now!
       if !(Mentee.find_by user: current_user)
         Mentee.create(user: current_user)
       end
@@ -18,11 +17,8 @@ class SessionsController < ApplicationController
       @mentor = Mentor.find_by user_id: params[:mentor_id]
       Session.request(@mentee, @mentor)
       
-      puts "Created a new session"
-      puts Session
       redirect_to sessions_show_path
     else
-      puts "Failed creation"
       redirect_to catalog_index_path
     end
   end
