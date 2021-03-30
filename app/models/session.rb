@@ -5,6 +5,7 @@ class Session < ApplicationRecord
     belongs_to :mentee
 
     def self.request(mentee, mentor)
-        Session.create(mentor: mentor, mentee: mentee, status: requested)
+        @sess = Session.create(mentor: mentor, mentee: mentee)
+        @sess.requested!
     end
 end

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'mentors/edit'
   
   get 'sessions/create'
+  get 'sessions/cancel'
+  get 'sessions/approve'
 
   resources :mentors do
   end

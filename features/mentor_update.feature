@@ -26,7 +26,7 @@ Scenario: user can become mentor
   And I search for bob
   And I click search
   And I click more info
-  Then I should find tutor results
+  Then I should find bob results
 
 Scenario: user can update mentor data
   When I login
@@ -38,7 +38,7 @@ Scenario: user can update mentor data
   And I click save mentor button
   And I click catalog
   And I search for bob
-  Then I should find tutor results
+  Then I should find changed results
 
 Scenario: user can delete mentor data
   When I login
@@ -49,4 +49,4 @@ Scenario: user can delete mentor data
   And I click quit mentor button
   And I click catalog
   And I search for bob
-  Then I should not find tutor results
+  Then I should not find changed results
