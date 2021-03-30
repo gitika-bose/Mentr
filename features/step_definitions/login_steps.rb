@@ -17,6 +17,12 @@ When /^(?:|I )sign in with correct credentials$/ do
     fill_in("password_login", :with => "bob1876")
 end
 
+When /^(?:|I )register a temporary mentor$/ do
+    fill_in("username_email_login", :with => "bil@mentr.me")
+    fill_in("password_login", :with => "PoPcornHorse")
+    click_button("login_button")
+end
+
 When /^(?:|I )navigate to sign in$/ do
   click_link("login_link")
 end
@@ -34,6 +40,14 @@ end
 
 When /^(?:|I )click catalog$/ do
   click_link("catalog_link")
+end
+
+When /^(?:|I )click become mentor$/ do
+  click_link("new_mentor_profile_link")
+end
+
+When /^(?:|I )click update mentor$/ do
+  click_link("edit_mentor_profile_link")
 end
 
 When /^(?:|I )click edit profile$/ do

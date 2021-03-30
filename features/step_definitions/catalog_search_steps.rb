@@ -29,19 +29,3 @@ Then /^(?:I )should not find tutor results$/ do
       assert page.has_no_content?("XYZ")
     end
 end
-
-Then /^(?:I )should find all tutor results$/ do
-    if page.respond_to? :should
-        page.should have_content("bob")
-        page.should have_content("bil")
-        page.should have_content("eric")
-        page.should have_content("john")
-        page.should have_content("dillen")
-    else
-      assert page.has_content?("bob")
-      assert page.has_content?("bil")
-      assert page.has_content?("eric")
-      assert page.has_content?("john")
-      assert page.has_content?("dillen")
-    end
-end

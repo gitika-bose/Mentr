@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  get 'sessions/show'
   root 'homepage#index'
   get 'mentors/new'
   get 'mentors/edit'
   
+  get 'sessions/create'
+
   resources :mentors do
   end
-  
+
   resources :catalog do
   end
 

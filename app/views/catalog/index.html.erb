@@ -14,7 +14,7 @@
   <div class="row">
     <% @mentors.each do |user| %>
       <div class="col-sm">
-        <%= render 'components/card', title: user.username, text: 'Subjects taught XYZ with experience working', 
+        <%= render 'components/card', title: user.username, text: (user.profile) ? user.profile : "Hello, my name is #{user.username}",
         img: 'https://imgur.com/EM2B1A8.png', link: catalog_path(user.user_id), btn: "More Info" %>
       </div>
     <% end %>
