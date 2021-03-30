@@ -12,6 +12,9 @@
           <%= link_to 'Edit profile', edit_user_registration_path, class: 'nav-link', id: "edit_profile_link" %>
         </li>
         <li class="nav-item">
+          <%= link_to 'Sessions', sessions_show_path, class: 'nav-link', id: "edit_profile_link" %>
+        </li>
+        <li class="nav-item">
           <% if Mentor.find_by user: current_user %>
             <%= link_to 'Update Mentor Info', mentors_new_path, class: 'nav-link', id: "edit_mentor_profile_link" %>
           <% else %>
