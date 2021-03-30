@@ -1,0 +1,51 @@
+<h1>Mentor Sessions</h1>
+<table class="table table-striped col-md-12" id="sessions_as_mentor">
+  <thead>
+    <tr>
+      <th>Mentor</th>
+      <th>Mentee</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sessions_as_mentor.each do |session| %>
+      <tr>
+        <td>
+          <%= session.mentor.user.username %>
+        </td>
+        <td>
+          <%= session.mentee.user.username %>
+        </td>
+        <td>
+          <%= [ :requested, :accepted, :terminated ][session.status] %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Mentee Sessions</h1>
+<table class="table table-striped col-md-12" id="sessions_as_mentee">
+  <thead>
+    <tr>
+      <th>Mentor</th>
+      <th>Mentee</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sessions_as_mentee.each do |session| %>
+      <tr>
+        <td>
+          <%= session.mentor.user.username %>
+        </td>
+        <td>
+          <%= session.mentee.user.username %>
+        </td>
+        <td>
+          <%= session.status %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

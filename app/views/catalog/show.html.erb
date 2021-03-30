@@ -12,18 +12,36 @@
     Email:
     <%= @user.email %>
   </li>
+
+  <% if @user.professional and @user.professional!=""%>
+    <li>
+      Link to professional portfolio:
+      <%= @user.professional %>
+    </li>
+  <% end %>
+
+  <% if @user.location and @user.location!="" %>
   <li>
-    Link to professional portfolio:
-    <%= @user.professional %>
+    Location:
+    <%= @user.location %>
   </li>
+  <% end %>
+
+  <% if @user.company and @user.company!=""%>
+  <li>
+    Company:
+    <%= @user.company %>
+  </li>
+  <% end %>
+
 </ul>
 
 <h3>Description:</h3>
 <p id="description">
-  <%= @user.profile %>
+  <%= (@user.profile) ? @user.profile: "Hello, my name is #{@user.username}" %>
 </p>
 
 <div class="row">
   <%= link_to 'Back to all  mentors', catalog_index_path, :class => 'btn btn-primary col-2' %>
-  <%= link_to 'Request a session', catalog_index_path(:mentor => @user), :class => 'btn btn-primary col-2' %>
+  <%= link_to 'Request a session', sessions_create_path(:mentor_id => @user.user_id), :class => 'btn btn-primary col-2' %>
 </div>

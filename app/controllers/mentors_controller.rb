@@ -25,9 +25,6 @@ class MentorsController < ApplicationController
   
   def update
     @mentor = Mentor.find_by user: current_user
-    puts "Updating mentor\n"
-    puts mentor_params
-    puts @mentor
 
     if @mentor.update(mentor_params)
       redirect_to catalog_path(current_user.id)
@@ -45,7 +42,6 @@ class MentorsController < ApplicationController
 
 private
   def mentor_params
-    puts params
     ({:user => current_user}).merge(params.require(:mentor).permit(:profile, :linkedin, :location, :website, :company))
   end
 

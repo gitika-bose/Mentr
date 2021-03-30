@@ -1,0 +1,34 @@
+class SessionsController < ApplicationController
+  before_action :authenticate_user!
+
+  def show
+    @sessions_as_mentor = Session.joins(:mentor).where("mentors.user_id = ?", current_user.id).all
+    @sessions_as_mentee = Session.joins(:mentee).where("mentees.user_id = ?", current_user.id).all
+
+  end
+
+  def create
+    if params[:mentor_id] != nil
+      puts "IM IN THERE"
+      #UserMailer.with(:user => current_user, :mentor => User.find_by(id:params[:mentor_id])).book_email.deliver_now
+      if !(Mentee.find_by user: current_user)
+        Mentee.create(user: current_user)
+      end
+      @mentee = Mentee.find_by user: current_user
+      @mentor = Mentor.find_by user_id: params[:mentor_id]
+      Session.request(@mentee, @mentor)
+      
+      puts "Created a new session"
+      puts Session
+      redirect_to sessions_show_path
+    else
+      puts "Failed creation"
+      redirect_to catalog_index_path
+    end
+  end
+
+  def update
+#    @session = Session.find_by user: current_user
+  end
+
+end
