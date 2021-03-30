@@ -10,9 +10,6 @@ class CatalogController < ApplicationController
       @mentors = @mentors.all;
     end
 
-    Mentor.all.each do |user|
-      puts user.linkedin
-    end
   end
 
   def show
