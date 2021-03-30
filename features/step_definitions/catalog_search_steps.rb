@@ -18,6 +18,10 @@ When /^(?:|I )click request session$/ do
     click_link("request_session_link")
 end
 
+When /^(?:|I )click cancel session$/ do
+    click_link("cancel_session_link")
+end
+
 When /^(?:|I )click back to all mentors$/ do
     click_link("back_to_catalog_link")
 end
