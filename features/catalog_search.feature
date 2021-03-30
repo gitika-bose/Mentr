@@ -34,4 +34,11 @@ Scenario: user can't search tutor
   And I search for potato
   And I click search
   Then I should not find tutor results
+
+Scenario: user searches and books tutor
+  When I login
+  And I click catalog
+  And I search for potato
+  And I click search
+  Then I should not find tutor results
   

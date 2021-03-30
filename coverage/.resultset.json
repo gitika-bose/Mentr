@@ -277,7 +277,7 @@
         }
       }
     },
-    "timestamp": 1617055725
+    "timestamp": 1617065143
   },
   "RSpec": {
     "coverage": {
@@ -409,15 +409,6 @@
           null
         ]
       },
-      "/Users/sharonjin/Desktop/mentr/app/models/mentor.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/sharonjin/Desktop/mentr/app/models/subject.rb": {
         "lines": [
           1,
@@ -478,6 +469,17 @@
           null,
           null
         ]
+      },
+      "/Users/sharonjin/Desktop/mentr/app/models/mentor.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       },
       "/Users/sharonjin/Desktop/mentr/app/jobs/application_job.rb": {
         "lines": [
@@ -549,6 +551,6 @@
         }
       }
     },
-    "timestamp": 1617055835
+    "timestamp": 1617065465
   }
 }
