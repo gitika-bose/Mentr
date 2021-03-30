@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Sessions", type: :request do
+
   describe "GET /show" do
     it "returns http failure for not logged in" do
       get "/sessions/show"

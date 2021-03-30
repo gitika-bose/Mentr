@@ -61,7 +61,7 @@
             </td>
             <td>
                 <% if !(session.terminated?) %>
-                    <%= link_to 'Cancel', sessions_cancel_path(:session_id => session.id), :class => 'btn btn-primary col-2' %>
+                    <%= link_to 'Cancel', sessions_cancel_path(:session_id => session.id), :class => 'btn btn-primary col-2', id: "cancel_session_link" %>
                 <% end %>
             </td>
         </tr>
