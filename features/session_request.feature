@@ -1,8 +1,8 @@
-Feature: users can find the catalog page and search through tutors
+Feature: users can request mentors
 
-  I am a mentee that would like to be tutored however I am easily
-  overwhelmed by searching for a tutor. I would like to easily
-  search for a tutor in a catalog.
+  I am a user that would like to request a mentor. However,
+  this involves a lot of complicated communication to get
+  approved, and I want an easier way to get a session.
   
 Background: a few mentors and mentees are using the site
   Given the following users exists
@@ -17,31 +17,23 @@ Background: a few mentors and mentees are using the site
   And I am on the catalog page
   Then 5 seed users should exist
 
-Scenario: user can become tutor and view tutor info
-  When I login
-  And I click become mentor
-  And I add mentor info
-  And I click sign up as mentor button
-  And I click catalog
-  And I search for bob
-  And I click search
-  And I click more info
-  Then I should find bob results
-
-Scenario: user can't search tutor
-  When I login
-  And I click catalog
-  And I search for potato
-  And I click search
-  Then I should not find potato results
-
-Scenario: user can search tutor, view tutor info, and go back to catalog
+Scenario: user can request a mentor session
   When I register a temporary mentor
   And I login
   And I click catalog
   And I search for bil
   And I click search
   And I click more info
-  And I click back to all mentors
-  Then I should find bil results
-  
+  And I click request session
+  Then I should find requested results
+
+Scenario: user can request and cancel a mentor session
+  When I register a temporary mentor
+  And I login
+  And I click catalog
+  And I search for bil
+  And I click search
+  And I click more info
+  And I click request session
+  And I click cancel session
+  Then I should find terminated results
