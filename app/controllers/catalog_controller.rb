@@ -5,7 +5,7 @@ class CatalogController < ApplicationController
     @mentors = get_mentors
 
     if params[:search] != nil and params[:search] != ""
-      @mentors = @mentors.where("username LIKE ? ", "%#{params[:search]}%");
+      @mentors = @mentors.where("profile LIKE ? ", "%#{params[:search]}%").or(@mentors.where("username LIKE ? ", "%#{params[:search]}%"));
     else
       @mentors = @mentors.all;
     end
@@ -17,7 +17,7 @@ class CatalogController < ApplicationController
 
   def show
     id = params[:id]
-    @user = get_mentors.find_by user_id: id #Mentor.select('users.id AS id, users.email as email, users.username as username').joins(:user).all.find_by id: id
+    @user = get_mentors.find_by user_id: id 
   end
 
   private
