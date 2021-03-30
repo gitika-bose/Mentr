@@ -28,6 +28,12 @@ When /^(?:|I )register a temporary mentor$/ do
     click_link("login_link")
 end
 
+When /^(?:|I )login as temporary mentor$/ do
+    fill_in("username_email_login", :with => "bil@mentr.me")
+    fill_in("password_login", :with => "PoPcornHorse")
+    click_button("login_button")
+end
+
 When /^(?:|I )navigate to sign in$/ do
   click_link("login_link")
 end
@@ -57,6 +63,10 @@ end
 
 When /^(?:|I )click edit profile$/ do
   click_link("edit_profile_link")
+end
+
+When /^(?:|I )click sessions$/ do
+  click_link("sessions_link")
 end
 
 When /^(?:|I )(?:|click )logout$/ do

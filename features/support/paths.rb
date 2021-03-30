@@ -12,7 +12,7 @@ module NavigationHelpers
     #
     def path_to(page_name)
         case page_name
-    
+
         when /^the (Mentre )?home\s?page$/ then root_path
         when /^the (Mentre )?login\s?page$/ then new_user_session_path
         when /^the (Mentre )?user\s?page$/ then user_profile_path(User.find_by_username("bob"))
@@ -20,13 +20,13 @@ module NavigationHelpers
         when /^the (Mentre )?edit\sprofile\s?page$/ then '/users/edit'
         when /^the (Mentre )?become\smentor\s?page$/ then '/mentors/new'
         when /^the (Mentre )?update\smentor\s?page$/ then '/mentors/edit'
-    
+
         # Add more mappings here.
         # Here is an example that pulls values out of the Regexp:
         #
         #   when /^(.*)'s profile page$/i
         #     user_profile_path(User.find_by_login($1))
-    
+
         else
           begin
             page_name =~ /^the (.*) page$/
@@ -39,6 +39,5 @@ module NavigationHelpers
         end
     end
   end
-  
+
   World(NavigationHelpers)
-  

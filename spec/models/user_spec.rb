@@ -27,4 +27,13 @@ RSpec.describe User, type: :model do
       end
     end
   end
+  describe 'search for user' do
+    context 'git@gmail.com' do
+      it 'missing username' do
+        User.create(email:"git@gmail.com", username: "gitikabose", password: "yogurt5678")
+        @user = User.search("gitika")
+        expect(@user[0]).to eq User.find_by(username:"gitikabose")
+      end
+    end
+  end
 end
