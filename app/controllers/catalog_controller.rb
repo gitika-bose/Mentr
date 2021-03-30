@@ -13,17 +13,25 @@ class CatalogController < ApplicationController
     else
       @mentors = @mentors.all;
     end
+
+    Mentor.all.each do |user|
+      puts user.linkedin
+    end
   end
 
   def show
-    id = params[:id] # retrieve movie ID from URI route
+    id = params[:id]
     @user = get_mentors.find_by user_id: id #Mentor.select('users.id AS id, users.email as email, users.username as username').joins(:user).all.find_by id: id
   end
 
   private
   def get_mentors
     Mentor
-      .select('users.id AS user_id, users.username AS username, users.email AS email')
+      .select('users.id AS user_id, 
+        users.username AS username, 
+        users.email AS email, 
+        profile,
+        linkedin AS professional')
       .joins(:user);
   end
 
