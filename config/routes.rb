@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'homepage#index'
   get 'mentors/new'
   get 'mentors/edit'
-  
+
   get 'sessions/create'
   get 'sessions/cancel'
   get 'sessions/approve'

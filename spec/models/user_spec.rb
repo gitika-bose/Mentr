@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'add new user' do
-    context 'add gitika.bose@gmail.com' do
+    context 'add fakeemail@gmail.com' do
       it 'no users initially' do
-        @user = User.find_by_email("gitika.bose@gmail.com")
+        @user = User.find_by_email("fakeemail@gmail.com")
         expect(@user).to eq nil
       end
       it 'one user added to database' do
@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
     context 'add git@gmail.com' do
       it 'missing username' do
         User.create(email:"git@gmail.com", password: "yogurt1234")
-        @user = User.find_by_email("gitika.bose@gmail.com")
+        @user = User.find_by_email("git@gmail.com")
         expect(@user).to eq nil
       end
     end

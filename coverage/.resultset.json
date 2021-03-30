@@ -377,10 +377,41 @@
           null
         ]
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/users_controller.rb": {
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/catalog_controller.rb": {
         "lines": [
           1,
           1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -405,13 +436,21 @@
           1,
           null,
           1,
-          2,
+          1,
           0,
           null,
-          0,
+          1,
+          null,
+          1,
           0,
           null,
-          0,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
           null,
           null
         ]
@@ -443,6 +482,7 @@
           null,
           1,
           0,
+          0,
           null,
           null
         ]
@@ -453,62 +493,19 @@
           null
         ]
       },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/models/mentor.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/homepage_controller.rb": {
         "lines": [
           1,
           1,
-          null,
-          null
-        ]
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/mentors_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          1,
-          1,
-          0,
-          null,
           null,
           null
         ]
@@ -523,11 +520,9 @@
           0,
           null,
           null,
-          null,
           1,
           0,
           0,
-          null,
           0,
           0,
           null,
@@ -536,31 +531,25 @@
           0,
           null,
           0,
-          0,
-          0,
           null,
-          0,
           0,
           null,
           null,
           null,
           1,
+          0,
+          0,
+          0,
           null,
+          null,
+          1,
+          0,
+          0,
+          0,
           null,
           null,
           null
         ]
-      },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/models/mentor.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       },
       "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/jobs/application_job.rb": {
         "lines": [
@@ -575,39 +564,20 @@
         "branches": {
         }
       },
-      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/catalog_controller.rb": {
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/users_controller.rb": {
         "lines": [
           0,
           0,
           null,
           0,
           0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/gitikabose/Desktop/Sem8/ase/mentrme/app/controllers/mentors_controller.rb": {
+        "lines": [
           0,
           0,
           null,
@@ -618,8 +588,38 @@
           0,
           0,
           0,
+          null,
           0,
           0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
           0,
           0,
           0,
@@ -651,6 +651,6 @@
         }
       }
     },
-    "timestamp": 1617068596
+    "timestamp": 1617072958
   }
 }
