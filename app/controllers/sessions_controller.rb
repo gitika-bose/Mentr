@@ -4,10 +4,6 @@ class SessionsController < ApplicationController
   def show
     @sessions_as_mentor = Session.joins(:mentor).where("mentors.user_id = ?", current_user.id).all
     @sessions_as_mentee = Session.joins(:mentee).where("mentees.user_id = ?", current_user.id).all
-
-    @sessions_as_mentee.each do |session|
-      puts session.status
-    end
   end
 
   def create
