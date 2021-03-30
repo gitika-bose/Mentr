@@ -43,5 +43,5 @@
 
 <div class="row">
   <%= link_to 'Back to all mentors', catalog_index_path, :class => 'btn btn-primary col-2', id: "back_to_catalog_link" %>
-  <%= link_to 'Request a session', catalog_index_path(:mentor => @user), :class => 'btn btn-primary col-2', id: "request_session_link" %>
+  <%= link_to 'Request a session', sessions_create_path(:mentor_id => @user.user_id), :class => 'btn btn-primary col-2', id: "request_session_link" %>
 </div>
