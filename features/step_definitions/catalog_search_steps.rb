@@ -14,18 +14,26 @@ When /^(?:|I )click more info$/ do
     click_link("more_info_button")
 end
 
-Then /^(?:I )should find tutor results$/ do
+When /^(?:|I )click request session$/ do
+    click_link("request_session_link")
+end
+
+When /^(?:|I )click back to all mentors$/ do
+    click_link("back_to_catalog_link")
+end
+
+Then /^(?:I )should find (.+) results$/ do |tutor|
     if page.respond_to? :should
-        page.should have_content("XYZ")
+        page.should have_content(tutor)
     else
-      assert page.has_content?("XYZ")
+      assert page.has_content?(tutor)
     end
 end
 
-Then /^(?:I )should not find tutor results$/ do
+Then /^(?:I )should not find (.+) results$/ do |tutor|
     if page.respond_to? :should
-        page.should have_no_content("XYZ")
+        page.should have_no_content(tutor)
     else
-      assert page.has_no_content?("XYZ")
+      assert page.has_no_content?(tutor)
     end
 end

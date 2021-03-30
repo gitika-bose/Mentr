@@ -17,7 +17,7 @@ Background: a few mentors and mentees are using the site
   And I am on the catalog page
   Then 5 seed users should exist
 
-Scenario: user can search tutor and view tutor info
+Scenario: user can become tutor and view tutor info
   When I login
   And I click become mentor
   And I add mentor info
@@ -26,19 +26,31 @@ Scenario: user can search tutor and view tutor info
   And I search for bob
   And I click search
   And I click more info
-  Then I should find tutor results
+  Then I should find bob results
 
 Scenario: user can't search tutor
   When I login
   And I click catalog
   And I search for potato
   And I click search
-  Then I should not find tutor results
+  Then I should not find potato results
 
-Scenario: user searches and books tutor
-  When I login
+Scenario: user can search tutor, view tutor info, and book tutor
+  When I register a temporary mentor
+  And I login
   And I click catalog
-  And I search for potato
+  And I search for bil
   And I click search
-  Then I should not find tutor results
+  And I click more info
+  And I click request session
+
+Scenario: user can search tutor, view tutor info, and go back to catalog
+  When I register a temporary mentor
+  And I login
+  And I click catalog
+  And I search for bil
+  And I click search
+  And I click more info
+  And I click back to all mentors
+  Then I should find bil results
   
