@@ -12,15 +12,33 @@
     Email:
     <%= @user.email %>
   </li>
+
+  <% if @user.professional and @user.professional!=""%>
+    <li>
+      Link to professional portfolio:
+      <%= @user.professional %>
+    </li>
+  <% end %>
+
+  <% if @user.location and @user.location!="" %>
   <li>
-    Link to professional portfolio:
-    <%= @user.professional %>
+    Location:
+    <%= @user.location %>
   </li>
+  <% end %>
+
+  <% if @user.company and @user.company!=""%>
+  <li>
+    Company:
+    <%= @user.company %>
+  </li>
+  <% end %>
+
 </ul>
 
 <h3>Description:</h3>
 <p id="description">
-  <%= @user.profile %>
+  <%= (@user.profile) ? @user.profile: "Hello, my name is #{@user.username}" %>
 </p>
 
 <div class="row">
