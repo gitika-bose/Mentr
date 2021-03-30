@@ -21,6 +21,11 @@ When /^(?:|I )register a temporary mentor$/ do
     fill_in("username_email_login", :with => "bil@mentr.me")
     fill_in("password_login", :with => "PoPcornHorse")
     click_button("login_button")
+    click_link("new_mentor_profile_link")
+    fill_in("profile_edit", :with => "hewoooo")
+    click_button("submit_mentor_register")
+    click_link("logout_link")
+    click_link("login_link")
 end
 
 When /^(?:|I )navigate to sign in$/ do
