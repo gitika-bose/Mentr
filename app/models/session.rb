@@ -1,6 +1,5 @@
 class Session < ApplicationRecord
     enum status: [ :requested, :accepted, :terminated ]
-
     belongs_to :mentor
     belongs_to :mentee
 

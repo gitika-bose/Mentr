@@ -2,15 +2,15 @@ require 'uri'
 require 'cgi'
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
 
-Given /the following users exists/ do |user_table|
-    user_table.hashes.each do |user|
-        User.create(username: user["username"], email: user["email"], password: user["password"])
-    end
-end
-
 Given /^(?:|I )am on (.+)$/ do |page_name|
     visit path_to(page_name)
   end
+
+When /^(?:|I )sign in as testuser (\d*)$/ do |n|
+  fill_in("username_email_login", :with => test_username(n.to_i))
+  fill_in("password_login", :with => test_userpassword(n.to_i))
+  click_button("login_button")
+end
 
 When /^(?:|I )sign in with correct credentials$/ do
     fill_in("username_email_login", :with => "bob@mentr.me")
@@ -69,7 +69,7 @@ When /^(?:|I )click sessions$/ do
   click_link("sessions_link")
 end
 
-When /^(?:|I )(?:|click )logout$/ do
+When /^(?:|I )(?:|click )(?:logout|sign out)$/ do
     click_link("logout_link")
 end
 
@@ -82,6 +82,10 @@ Then /^(?:|I )should be on (.+)$/ do |page_name|
     end
 end
 
-Then /(.*)(?: seed)? users? should exist/ do | n_seeds |
-    User.count.should be n_seeds.to_i
+Then /^(?:|I )should be logged in$/ do
+  has_link?('Loggout')
+end
+
+Then /^(?:|I )should be logged out$/ do
+  has_link?('Login')
 end
