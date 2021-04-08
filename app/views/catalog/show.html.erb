@@ -1,47 +1,38 @@
-<!--  app/views/movies/show.html.erb -->
-<h1>About <em><%= @user.username %></em></h1>
+<div class="container">
+  <h1>All Mentors</h1>
+  <div style="margin:10px; display:flex; align-items:center; justify-content: center;">
+    <%= form_tag(catalog_index_path, method: :get) do %>
+      <div class="input-group">
+        <div class="form-outline" style="margin-right:5px">
+          <%= text_field_tag(:search, params[:search], class:'form-control mr-sm-2', placeholder:"Search", id: "catalog_search")%>
+        </div>
+        <%= submit_tag "Search", class:"btn btn-outline-success my-2 my-sm-0", id: "catalog_search_button" %>
+      </div>
+    <% end %>
+  </div>
 
-<h2>Details about <em><%= @user.username %></em></h2>
+  <div class="row">
+    <% @mentors.each do |user| %>
+      <div class="col-sm">
+        <%= render 'components/card', title: user.username, text: (user.profile) ? user.profile : "Hello, my name is #{user.username}",
+        img: 'https://bootdey.com/img/Content/avatar/avatar7.png', link: user_path(user.user_id), btn: "More Info" %>
+      </div>
+    <% end %>
 
-<ul id="details">
-  <li>
-    Name:
-    <%= @user.username %>
-  </li>
-  <li>
-    Email:
-    <%= @user.email %>
-  </li>
+    <% if @mentors.length%3 == 1%>
+      <div class="col-sm">
+        <div style="width:18rem; border-width:1px;"></div>
+      </div>
+      <div class="col-sm">
+        <div style="width:18rem; border-width:1px;"> </div>
+      </div>
+    <% end %>
 
-  <% if @user.professional and @user.professional!=""%>
-    <li>
-      Link to professional portfolio:
-      <%= @user.professional %>
-    </li>
-  <% end %>
+    <% if @mentors.length%3 == 2%>
+      <div class="col-sm">
+        <div style="width:18rem; border-width:1px;"></div>
+      </div>
+    <% end %>
 
-  <% if @user.location and @user.location!="" %>
-  <li>
-    Location:
-    <%= @user.location %>
-  </li>
-  <% end %>
-
-  <% if @user.company and @user.company!=""%>
-  <li>
-    Company:
-    <%= @user.company %>
-  </li>
-  <% end %>
-
-</ul>
-
-<h3>Description:</h3>
-<p id="description">
-  <%= (@user.profile) ? @user.profile: "Hello, my name is #{@user.username}" %>
-</p>
-
-<div class="row">
-  <%= link_to 'Back to all mentors', catalog_index_path, :class => 'btn btn-primary col-2', id: "back_to_catalog_link" %>
-  <%= link_to 'Request a session', sessions_create_path(:mentor_id => @user.user_id), :class => 'btn btn-primary col-2', id: "request_session_link" %>
+  </div>
 </div>

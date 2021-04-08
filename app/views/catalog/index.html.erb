@@ -1,5 +1,6 @@
 <div class="container">
-  <h1>All Mentors</h1>
+  <h1>Mentor Match</h1>
+  <p><center>Choose a category from below to exclusively find mentors whose specializations align with your interests</center></p>
   <div style="margin:10px; display:flex; align-items:center; justify-content: center;">
     <%= form_tag(catalog_index_path, method: :get) do %>
       <div class="input-group">
@@ -12,25 +13,31 @@
   </div>
 
   <div class="row">
-    <% @mentors.each do |user| %>
+    <% @categories.each_with_index do |category, index| %>
       <div class="col-sm">
-        <%= render 'components/card', title: user.username, text: (user.profile) ? user.profile : "Hello, my name is #{user.username}",
-        img: 'https://imgur.com/EM2B1A8.png', link: catalog_path(user.user_id), btn: "More Info" %>
+        <div class="card bg-light mb-3" style="width: 18rem; margin-left:auto; margin-right:auto;">
+          <div class="card-header"><%= category %> </div>
+          <div class="card-body">
+            <h5 class="card-title">category</h5>
+            <p class="card-text">category descriptionssss.</p>
+            <%= link_to "View All", catalog_path(1), class: "btn btn-primary", id: "more_info_button" %>
+          </div>
+        </div>
       </div>
     <% end %>
 
-    <% if @mentors.length%3 == 1%>
+    <% if @categories.length%3 == 1%>
       <div class="col-sm">
-        <div style="width:18rem"> </div>
+        <div style="width:18rem"></div>
       </div>
       <div class="col-sm">
         <div style="width:18rem"> </div>
       </div>
     <% end %>
 
-    <% if @mentors.length%3 == 2%>
+    <% if @categories.length%3 == 2%>
       <div class="col-sm">
-        <div style="width:18rem"> </div>
+        <div style="width:18rem"></div>
       </div>
     <% end %>
 

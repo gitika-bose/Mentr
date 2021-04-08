@@ -2,6 +2,7 @@ class CatalogController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @categories = ["All", "Computer Science", "Finance", "Psychology"];
     @mentors = get_mentors
 
     if params[:search] != nil and params[:search] != ""
@@ -14,7 +15,14 @@ class CatalogController < ApplicationController
 
   def show
     id = params[:id]
-    @user = get_mentors.find_by user_id: id 
+    @user = get_mentors.find_by user_id: id
+    @mentors = get_mentors
+
+    if params[:search] != nil and params[:search] != ""
+      @mentors = @mentors.where("profile LIKE ? ", "%#{params[:search]}%").or(@mentors.where("username LIKE ? ", "%#{params[:search]}%"));
+    else
+      @mentors = @mentors.all;
+    end
   end
 
   private
