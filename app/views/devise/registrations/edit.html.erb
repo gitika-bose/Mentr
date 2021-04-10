@@ -11,12 +11,6 @@
         <% end %>
       </div>
 
-      <div>
-        <% if @user.resume.attached? %>
-          <%= link_to 'Download Resume', rails_blob_path(@user.resume, disposition: "attachment") %>
-        <% end %>
-      </div>
-
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -55,12 +49,6 @@
         <div class=”form-group”> 
           (Upload your new profile picture below!)
           <%= f.file_field :avatar, class: 'form-control' %>
-          <br />
-        </div>
-
-        <div>
-          (Upload your resume below!)
-          <%= f.file_field :resume, class: 'form-control' %>
           <br />
         </div>
 
