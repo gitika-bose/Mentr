@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @sessions_as_mentor = Session.joins(:mentor).where("mentors.user_id = ?", current_user.id).all
+    @sessions_as_mentor = Session.joins(:mentor).where("mentors.user_id = ?", current_user.id, "sessions.status").all
     @sessions_as_mentee = Session.joins(:mentee).where("mentees.user_id = ?", current_user.id).all
   end
 
