@@ -133,6 +133,9 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
@@ -334,6 +337,7 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
+  activestorage
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
@@ -341,6 +345,7 @@ DEPENDENCIES
   database_cleaner
   devise
   dotenv
+  dotenv-rails
   factory_bot_rails
   jbuilder (~> 2.7)
   listen (~> 3.3)

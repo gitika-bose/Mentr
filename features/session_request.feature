@@ -5,15 +5,11 @@ Feature: users can request mentors
   approved, and I want an easier way to get a session.
 
 Background: a few mentors and mentees are using the site
-  Given the following users exists
-
-    | username | email                   | password            |
-    | bob      | bob@mentr.me            | bob1876             |
-    | bil      | bil@mentr.me            | PoPcornHorse        |
-    | eric     | eric@mentr.me           | 12334567772         |
-    | john     | john23@mentr.me         | QWERTY              |
-    | dillen   | dillen@mentr.me         | PassWord            |
-
+  Given there are 5 users
+  And testuser 1 is registered as a mentor
+  And testuser 2 is registered as a mentee
+  And testuser 3 is registered as a mentor
+  And testuser 3 is registered as a mentee
   And I am on the catalog page
   Then 5 seed users should exist
 
@@ -26,17 +22,6 @@ Scenario: user can request a mentor session
   And I click more info
   And I click request session
   Then I should find requested results
-
-Scenario: user can request and cancel a mentor session
-  When I register a temporary mentor
-  And I login
-  And I click catalog
-  And I search for bil
-  And I click search
-  And I click more info
-  And I click request session
-  And I click cancel session
-  Then I should find terminated results
 
 Scenario: mentor can request and accept a mentor session
   When I register a temporary mentor
@@ -52,3 +37,16 @@ Scenario: mentor can request and accept a mentor session
   And I click sessions
   And I click approve session
   Then I should find accepted results
+
+Scenario: user can request and cancel a mentor session
+  When I register a temporary mentor
+  And I login
+  And I click catalog
+  And I search for bil
+  And I click search
+  And I click more info
+  And I click request session
+  And I click cancel session
+  Then I should find terminated results
+
+Scenario: mentors and mentees can view information about and organize their session

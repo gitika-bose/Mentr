@@ -31,6 +31,8 @@ gem 'byebug'
 gem 'sinatra'
 gem 'stripe', '~> 5.21.0'
 gem 'dotenv'
+gem 'activestorage'
+gem 'dotenv-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

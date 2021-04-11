@@ -82,10 +82,10 @@ Then /^(?:|I )should be on (.+)$/ do |page_name|
     end
 end
 
-Then /^(?:|I )should be logged in$/ do
+Then /^(?:|I )should be logged (?:in|on)$/ do
   has_link?('Loggout')
 end
 
-Then /^(?:|I )should be logged out$/ do
+Then /^(?:|I )should be logged (?:off|out)$/ do
   has_link?('Login')
 end

@@ -68,4 +68,9 @@
         <% end %>
     </tbody>
     </table>
+    
+<%else%>
+    <h1> No sessions requested or in progress. </h1>
+    <h3> <%= link_to 'View catalog to create a session', catalog_index_path, class: 'nav-link', id: "catalog_link" %> </h3>
+
 <%end%>
