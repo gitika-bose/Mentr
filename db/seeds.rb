@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#subjects = ["Computer Science", "Finance", "Probability", "Statistics", "Networking"]
+#subjects.each do |name|
+#    Subject.create(name: name)
+#end

@@ -1,52 +1,39 @@
 Feature: Users should be able to sign up
   
-  I am a mentee that would like to be tutored however I am easily
-  overwhelmed by complicated websites and often make mistakes. I 
-  would like to quickly and effortlessly create an account.
+  As a person seeking advice and learning
+  I would like to register with mentre me
+  So that the experience is fast and painfree
 
-Background: a few mentors and mentees are using the site
-  Given the following users exists
+Background: a few users are on the site and a new user wants to sign up
+  Given there are 5 users
+  And  I am on the sign up page
+  Then 5 users should exist
+  And I should be logged out
 
-    | username | email                   | password            |
-    | bob      | bob@mentr.me            | bob1876             |
-    | bil      | bil@mentr.me            | PoPcornHorse        |
-    | eric     | eric@mentr.me           | 12334567772         |
-    | john     | john23@mentr.me         | QWERTY              |
-    | dillen   | dillen@mentr.me         | PassWord            |
+Scenario: A user should be able to successfully sign up for an account
+  When I sign up as testuser 6
+  Then I should be logged in as testuser 6
+  And testuser 6 is registered
+  And 6 users should exist
 
-  And  I am on the login page
-  Then 5 seed users should exist
-
-Scenario: A duplicate account is created
-  When I click sign up
-  And I fill in duplicate information
-  And I click register
-  Then I should fail the sign up
-
-Scenario: A user should be able to successfully sign up
-  When I click sign up
-  And I fill in new account information
-  And I click register
-  Then 6 users should exist
+Scenario: A user who is already signed up up tries to sign up
+  When testuser 1 is registered
+  And I sign up as testuser 1
+  Then I should get error "user already in database"
 
 Scenario: A user should sign up only as a mentee
-  When I click sign up
-  And I fill in new account information
-  And I click register
-  And I click catalog
-  And I search for kevin
-  And I click search
-  Then I should not find tutor results
+  When I sign up as testuser 6
+  Then testuser 6 is not a mentor
 
 Scenario: A user should be able to update their password
-  When I login
-  And I change my password
-  And I logout
-  And I navigate to sign in
-  And I login
-  Then I should fail the login
+  When I sign up as testuser 6
+  And I navigate to the edit user password page
+  And I change my password to testpassword 1
+  Then testuser 6 should have testpassword 1
 
 Scenario: A user should be able to cancel their account
-  When I login
+  When I sign up as testuser 6
+  And I navigate to the delete account page
   And I delete my account
-  Then 4 users should exist
+  Then testuser 6 should not be registered
+  And 4 users should exist

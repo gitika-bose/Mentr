@@ -28,18 +28,26 @@ def add_test_user (n)
     User.create(:username => test_username(n), :email => test_useremail(n), :password => test_userpassword(n))
 end
 
-Given /the following users exists/ do |user_table|
+Given /^the following users exists/ do |user_table|
     user_table.hashes.each do |user|
         User.create(user)
     end
 end
 
-Given /there are (\d*) users/ do |n|
+Given /^there are (\d*) users$/ do |n|
     for i in 1..n.to_i
         add_test_user i
     end
 end
 
-Then /(.*)(?: seed)? users? should exist/ do | n_seeds |
+Given /^testuser (\d*) is registered$/ do |n|
+    add_test_user n
+end
+
+Then /^(.*)(?: seed)? users? should exist$/ do | n_seeds |
     User.count.should be n_seeds.to_i
+end
+
+Then /^testuser (\d*) is registered$/ do |n|
+    User.find_by_name(test_username(n)).exists?
 end
