@@ -4,7 +4,13 @@
     <%= form_with model: @mentor do |f| %>
     <div class="textarea">
         <%= f.label :profile %><br />
-        <%= f.text_area :profile, id: "profile_edit" %>
+        <%= f.text_area :profile, id: "profile_edit", required: true %>
+    </div>
+
+    <div>
+        (Upload your resume below!)
+        <%= f.file_field :resume, class: 'form-control', required: true %>
+        <br />
     </div>
 
     <div class="field">
@@ -26,7 +32,6 @@
         <%= f.label :linkedin %><br />
         <%= f.text_field :linkedin, id: "linkedin_edit" %>
     </div>
-
 
     <div class="actions">
       <%= f.submit "Sign up", id: "submit_mentor_register", class: "btn btn-primary" %>

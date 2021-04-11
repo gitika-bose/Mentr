@@ -42,7 +42,7 @@ class MentorsController < ApplicationController
 
 private
   def mentor_params
-    ({:user => current_user}).merge(params.require(:mentor).permit(:profile, :linkedin, :location, :website, :company))
+    ({:user => current_user}).merge(params.require(:mentor).permit(:profile, :linkedin, :location, :website, :company, :resume))
   end
 
 end
