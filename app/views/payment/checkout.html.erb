@@ -1,0 +1,28 @@
+<div class="title">Choose a collaboration plan</div>
+
+<div class="price-table-container" style="margin-top:40px">
+    <section>
+        <img
+            src="https://i.imgur.com/K8fBDsG.png"
+            width="120"
+            height="120"
+        />
+        <div class="name">Premium</div>
+        <div class="price">$15</div>
+        <div class="duration">per month</div>
+        <%= link_to 'Select', payment_selected_path(:plan => "Premium", :price => 15), id: "special-plan-btn", class: 'btn btn-success' %>
+    </section>
+    <div style="margin-left: 150px"></div>
+    <section>
+        <img
+            src="https://i.imgur.com/vIbh5MD.png"
+            width="120"
+            height="120"
+        />
+        <div class="name">Special</div>
+        <div class="price">$5</div>
+        <div class="duration">per month</div>
+        <%= link_to 'Select', payment_selected_path(:plan => "Special", :price => 5), id: "special-plan-btn", class: 'btn btn-success' %>
+    </section>
+</div>
+<div id="error-message" class="error-message"></div>

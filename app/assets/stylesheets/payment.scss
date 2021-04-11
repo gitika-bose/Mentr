@@ -1,0 +1,99 @@
+// Place all the styles related to the Payment controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "bootstrap/dist/css/bootstrap";
+
+.title {
+    text-align: center;
+    font: arial;
+    font-weight: bold;
+    font-size: 50px;
+    color: black;
+}
+
+.summary {
+    text-align: center;
+    font: arial;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+}
+
+.center {
+    text-align: center;
+}
+
+.price-table-container .price {
+    color: #000000;
+    font-size: xx-large;
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.price-table-container .name {
+    color: #7F7F7F;
+    font-size: large;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.price-table-container .price {
+    color: #000000;
+    font-size: xx-large;
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    text-align: center;
+}
+  
+.price-table-container .duration {
+    color: #969696;
+    font-size: smaller;
+    text-align: center;
+}
+
+.error-message {
+    background-color: #000;
+    color: #fff;
+    display: none;
+    font-weight: bold;
+    left: 0;
+    padding: 10px;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+
+.price-table-container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+body {
+    background: #fff
+}
+
+.rounded {
+    border-radius: 1rem
+}
+
+.nav-pills .nav-link {
+    color: #555
+}
+
+.nav-pills .nav-link.active {
+    color: white
+}
+
+input[type="radio"] {
+    margin-right: 5px
+}
+
+.bold {
+    font-weight: bold
+}
