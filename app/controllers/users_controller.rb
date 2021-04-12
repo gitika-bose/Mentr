@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     id = params[:id]
+    @mentor = Mentor.find_by_id(id)
     @user = get_mentors.find_by user_id: id
   end
 
