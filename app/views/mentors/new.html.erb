@@ -33,6 +33,11 @@
         <%= f.text_field :linkedin, id: "linkedin_edit" %>
     </div>
 
+    <div class="form-group">
+        <%= select_tag 'subjects[]', options_for_select(Subject.all.map{ |u| u.name }, @subjects.map{ |u| u.name }), {:multiple => :multiple} %>
+    </div>
+
+
     <div class="actions">
       <%= f.submit "Sign up", id: "submit_mentor_register", class: "btn btn-primary" %>
     </div>
