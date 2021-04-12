@@ -1,44 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Stripe Checkout Sample</title>
-    <meta name="description" content="A demo of Stripe Payment Intents" />
-
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/global.css" />
-
-    <script src="./success.js" defer></script>
-  </head>
-
-  <body>
-    <div class="togethere-background"></div>
-    <div class="sr-root">
-      <div class="sr-main">
-        <header class="sr-header">
-          <div class="sr-header__logo"></div>
-        </header>
-        <div class="sr-payment-summary completed-view">
-            <h1>Your payment succeeded</h1>
-            <h4>
-              View CheckoutSession response:
-            </h4>
-          </div>
-          <div class="completed-view-section">
-            <pre>
-
-            </pre>
-            <button onclick="window.location.href = '/';">Restart demo</button>
-
-            <form id="manage-billing-form">
-              <button>Manage Billing</button>
-            </form>
-          </div>
-        </div>
-        <div class="sr-content">
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+<div class="text-center" style="margin-top:100px">
+  <h1 class="display-3">Thank you for your payment!</h1>
+  <p class="lead" style="margin-top:30px"><strong>Please check your email</strong> for your receipt.</p>
+  <div style="margin-top:40px"/>
+  <hr>
+  <p style="margin-top:40px">
+    Having trouble? <a href="">Contact us</a>
+  </p>
+  <p class="lead">
+    <%= link_to 'Back to homepage', homepage_index_path, id: "back-to-homepage-btn", class: 'btn btn-primary'%>
+  </p>
+</div>

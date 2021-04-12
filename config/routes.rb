@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'payment/checkout', to: 'payment#checkout', as: 'payment_checkout'
   get 'payment/failure'
-  get 'payment/success'
+  get 'payment/success', to: 'payment#success', as: 'payment_success'
   get 'payment/selected', to: 'payment#selected', as: 'payment_selected'
   get 'sessions/show'
   root 'homepage#index'
