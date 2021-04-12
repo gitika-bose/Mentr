@@ -49,7 +49,7 @@
 
         <div class="form-group">
             <%= f.label :subjects %><br />
-            <%= select_tag 'subjects[]', options_for_select(Subject.all.map{ |u| u.name }, @subjects.map{ |u| u.name }), {:multiple => :multiple, :class => 'form-control js-source-states', :required => true}%>
+            <%= select_tag 'subjects[]', options_for_select(Subject.all.map{ |u| u.name }, @subjects.map{ |u| u.name }), {:multiple => :multiple, :class => 'form-control js-source-states', :id => 'form-tags'} %>
         </div>
 
         <div class="form-group">

@@ -38,8 +38,8 @@
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                     <h6 class="mb-0"><img  width="24" height="24" viewBox="0 0 24 24" src="https://img.icons8.com/dotty/80/000000/open-resume.png" class="feather feather-linkedin mr-2 icon-inline"/>Resume</h6>
-                    <span class="text-secondary"><% if @mentor.resume.attached? %>
-                      <%= link_to 'Download', rails_blob_path(@mentor.resume, disposition: "attachment") %>
+                    <span class="text-secondary"><% if @user.resume.attached? %>
+                      <%= link_to 'Download', rails_blob_path(@user.resume, disposition: "attachment") %>
                     <% end %> </span>
                   </li>
                 </ul>
@@ -51,11 +51,9 @@
                   <div class="card h-100">
                     <div class="card-body">
                       <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">primary</i>Mentorship Subjects</h6>
-                      Web Design<br/><br/>
-                      Website Markup<br/><br/>
-                      One Page<br/><br/>
-                      Mobile Template<br/><br/>
-                      Backend API
+                      <% @user.subjects.map do |sub| %>
+                        <%= sub.name %> <br/>
+                      <% end %>
                     </div>
                   </div>
                 </div>

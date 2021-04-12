@@ -2,45 +2,28 @@ class CatalogController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    if params[:search] != nil and params[:search] != ""
+      redirect_to catalog_path(:id => -1, :search => params[:search])
+    end
     @categories = Subject.all;
+
   end
 
   def show
     if params[:search] != nil and params[:search] != ""
-      @mentors = @mentors.where("profile LIKE ? ", "%#{params[:search]}%").or(@mentors.where("username LIKE ? ", "%#{params[:search]}%"));
+      @subject_name = "search " + params[:search]
+      @mentors = Mentor.withUserInfo.where("profile LIKE ? ", "%#{params[:search]}%").or(Mentor.withUserInfo.where("LOWER(username) LIKE ? ", "%#{params[:search].downcase}%")).or(Mentor.withUserInfo.where("LOWER(profile) LIKE ? ", "%#{params[:search].downcase}%"));
     else
       id = params[:id]
       if id == "-1"
-        @mentors = get_mentor
+        @subject_name = "All"
+        @mentors = Mentor.all
       else
         @subject = Subject.find_by_id(id)
-        @mentors = get_mentor
+        @subject_name = @subject.name
         @mentors = @subject.mentors
-        @mentors = @subject.mentors.select('users.id AS user_id,
-          users.username AS username,
-          users.email AS email,
-          profile,
-          linkedin AS professional,
-          website,
-          location,
-          company')
-        .joins(:user);
       end
     end
-  end
-
-  private
-  def get_mentor
-    Mentor
-      .select('users.id AS user_id,
-        users.username AS username,
-        users.email AS email,
-        profile,
-        linkedin AS professional,
-        website,
-        location,
-        company')
-      .joins(:user);
   end
 
 end

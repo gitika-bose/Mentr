@@ -17,20 +17,19 @@
       <div class="card bg-light mb-3" style="width: 18rem; margin-left:auto; margin-right:auto;">
         <div class="card-header"><center>All</center></div>
           <%= link_to "View", catalog_path(-1), class: "btn btn-info", id: "more_info_button" %>
-        </div>
       </div>
+    </div>
 
     <% @categories.each_with_index do |category, index| %>
       <div class="col-sm">
         <div class="card bg-light mb-3" style="width: 18rem; margin-left:auto; margin-right:auto;">
           <div class="card-header"><center><%= category.name %> </center></div>
             <%= link_to "View", catalog_path(category.id), class: "btn btn-info", id: "more_info_button" %>
-          </div>
         </div>
-    <% end %>
       </div>
+    <% end %>
 
-    <% if @categories.length%3 == 1%>
+    <% if (@categories.length+1)%3 == 1%>
       <div class="col-sm">
         <div style="width:18rem"></div>
       </div>
@@ -39,11 +38,10 @@
       </div>
     <% end %>
 
-    <% if @categories.length%3 == 2%>
+    <% if (@categories.length+1)%3 == 2%>
       <div class="col-sm">
         <div style="width:18rem"></div>
       </div>
     <% end %>
-
   </div>
 </div>
