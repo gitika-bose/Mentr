@@ -7,10 +7,11 @@ $(".js-source-states").select2({
     tags: true
 });
 */
-  
+
 setTimeout(function(){
     $('.js-source-states').select2({
-        tags: true
+        tags: true,
+        closeOnSelect: false
       })
 });
 

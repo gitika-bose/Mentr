@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
   def create
     if params[:mentor_id] != nil
-      UserMailer.with(:user => current_user, :mentor => User.find_by(id:params[:mentor_id])).book_email.deliver_now
+      # UserMailer.with(:user => current_user, :mentor => User.find_by(id:params[:mentor_id])).book_email.deliver_now
       if !(Mentee.find_by user: current_user)
         Mentee.create(user: current_user)
       end
