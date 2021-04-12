@@ -42,8 +42,8 @@
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                     <h6 class="mb-0"><img  width="24" height="24" viewBox="0 0 24 24" src="https://img.icons8.com/dotty/80/000000/open-resume.png" class="feather feather-linkedin mr-2 icon-inline"/>Resume</h6>
-                    <span class="text-secondary"><% if @mentor.resume.attached? %>
-                      <%= link_to 'Download', rails_blob_path(@mentor.resume, disposition: "attachment") %>
+                    <span class="text-secondary"><% if @user.resume.attached? %>
+                      <%= link_to 'Download', rails_blob_path(@user.resume, disposition: "attachment") %>
                     <% end %> </span>
                   </li>
                 </ul>
