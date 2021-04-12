@@ -5,7 +5,7 @@
     </h1>
     <%= form_with model: @mentor do |f| %>
         <div class="form-group">
-            <%= f.label :profile, class: 'h5' %><br />
+            <%= f.label :Introduction, class: 'h5' %><br />
             <%= f.text_area :profile, id: "profile_edit", class: 'form-control', required: true %>
         </div>
 
@@ -32,12 +32,12 @@
             <%= f.label :company, class: 'h5' %><br />
             <%= f.text_field :company, id: "company_edit", class: 'form-control' %>
         </div>
-        
+
         <div class="form-group">
             <%= f.label :location, class: 'h5' %><br />
             <%= f.text_field :location, id: "location_edit", class: 'form-control' %>
         </div>
-        
+
         <div class="form-group">
             <%= f.label :website, class: 'h5' %><br />
             <%= f.text_field :website, id: "website_edit", class: 'form-control' %>
@@ -50,7 +50,7 @@
 
         <div class="form-group">
             <%= f.label :subjects, class: 'h5' %><br />
-            <%= select_tag 'subjects[]', options_for_select(Subject.all.map{ |u| u.name }, @subjects.map{ |u| u.name }), {:multiple => :multiple, :class => 'form-control js-source-states'} %>
+            <%= select_tag 'subjects[]', options_for_select(Subject.all.map{ |u| u.name }, @subjects.map{ |u| u.name }), {:multiple => :multiple, :class => 'form-control js-source-states', :id => 'form-tags'} %>
         </div>
 
         <div class="form-group">

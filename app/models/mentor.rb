@@ -8,4 +8,29 @@ class Mentor < ApplicationRecord
     def addSubject(subject_name)
         subjects << Subject.find_by_name(subject_name)
     end
+
+    def username
+        user.username
+    end
+
+    def email
+        user.email
+    end
+
+    def professional
+        linkedin
+    end
+
+    def self.withUserInfo
+        Mentor.select('users.id AS user_id,
+            users.username AS username,
+            users.email AS email,
+            profile,
+            linkedin AS professional,
+            website,
+            location,
+            company')
+      .joins(:user);
+    end
+
 end

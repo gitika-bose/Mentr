@@ -29,7 +29,7 @@ class MentorsController < ApplicationController
     @mentor = Mentor.find_by user: current_user
 
     if @mentor.update(mentor_params)
-      redirect_to catalog_path(current_user.id)
+      redirect_to catalog_index_path
     else
       render :edit
     end

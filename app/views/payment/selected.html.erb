@@ -9,7 +9,7 @@
         <div class="col-lg-6 mx-auto">
             <div class="card ">
                 <div class="card-header">
-                    <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+                    <div style="margin-top:8px">
                         <!-- Credit card form tabs -->
                         <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
                             <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Credit Card </a> </li>
@@ -56,7 +56,7 @@
                                     $<%= @price %>/month
                                     <br/><br/>
                                 </div>
-                                <div class="card-footer"> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
+                                <div class="card-footer"> <%= link_to 'Confirm Payment', payment_success_path, id: "confirm-payment-btn", class: 'btn btn-primary', style:"width:100%"%>
                             </form>
                         </div>
                     </div> <!-- End -->
@@ -72,3 +72,9 @@
             </div>
         </div>
     </div>
+</div>
+<div style="margin-top: 30px"></div>
+<center>
+    <%= link_to 'Back', payment_checkout_path, id: "go-back-btn", class: 'btn btn-outline-secondary'%>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <%= link_to 'Cancel', edit_user_registration_path, id: "cancel-btn", class: 'btn btn-danger'%>
+</center>
