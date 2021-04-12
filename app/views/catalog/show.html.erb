@@ -13,9 +13,26 @@
 
   <div class="row">
     <% @mentors.each do |user| %>
+      <% if user.user.avatar.attached? %>
+        <% @img = user.user.avatar %>
+      <% else %>
+        <% @img = 'https://bootdey.com/img/Content/avatar/avatar7.png' %>
+      <% end %>
       <div class="col-sm">
-        <%= render 'components/card', title: user.username, text: (user.profile) ? user.profile : "Hello, my name is #{user.username}",
-        img: 'https://bootdey.com/img/Content/avatar/avatar7.png', link: user_path(user.user_id), btn: "More Info" %>
+        <%= content_tag :div, class: "card", style: 'width: 18rem; margin-left: auto; margin-right: auto; margin-bottom:2rem;' do %>
+          <%= image_tag @img, class: "card-img-top", alt: "card image", style: "width:18rem; object-fit: cover; object-position: center; max-height: 250px; margin-bottom: 1rem;" do %><% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= user.username %></h5>
+            <p class="card-text">
+              <%= user.profile %> <br/>
+              Subjects: <%= user.subjects.count %>
+              <% user.subjects.map do |sub| %>
+                <%= sub.name %>
+              <% end %>
+            </p>
+            <%= link_to "More Info", user_path(user.user_id), class: "btn btn-primary", id: "more_info_button" %>
+          </div>
+        <% end %>
       </div>
     <% end %>
 
