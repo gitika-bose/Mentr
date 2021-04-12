@@ -6,6 +6,7 @@ class MentorsController < ApplicationController
       redirect_to mentors_edit_path
     else
       @mentor = Mentor.new
+      @subjects = @mentor.subjects
     end
   end
 
@@ -21,6 +22,7 @@ class MentorsController < ApplicationController
 
   def edit
     @mentor = Mentor.find_by user: current_user
+    @subjects = @mentor.subjects
   end
   
   def update
@@ -42,7 +44,7 @@ class MentorsController < ApplicationController
 
 private
   def mentor_params
-    ({:user => current_user}).merge(params.require(:mentor).permit(:profile, :linkedin, :location, :website, :company, :resume))
+    ({:user => current_user, :subjects => params[:subjects].map {|name| Subject.find_by_name(name)} }).merge(params.require(:mentor).permit(:profile, :linkedin, :location, :website, :company, :resume))
   end
 
 end

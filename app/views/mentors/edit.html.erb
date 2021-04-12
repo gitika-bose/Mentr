@@ -1,4 +1,5 @@
 <div class="container">
+
     <h1 class="display-4">
         Update Mentor Profile
     </h1>
@@ -44,6 +45,11 @@
         <div class="form-group">
             <%= f.label :linkedin %><br />
             <%= f.text_field :linkedin, id: "linkedin_edit", class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :subjects %><br />
+            <%= select_tag 'subjects[]', options_for_select(Subject.all.map{ |u| u.name }, @subjects.map{ |u| u.name }), {:multiple => :multiple, :class => 'form-control js-source-states'} %>
         </div>
 
         <div class="form-group">
