@@ -26,9 +26,7 @@
             <p class="card-text">
               <%= user.profile %> <br/>
               Subjects:
-              <% user.subjects.map do |sub| %>
-                <%= sub.name %>,
-              <% end %>
+              <%="#{(user.subjects.map {|sub| sub.name}).join(", ")}"%>
             </p>
             <%= link_to "More Info", user_path(user.user_id), class: "btn btn-primary", id: "more_info_button" %>
           </div>
