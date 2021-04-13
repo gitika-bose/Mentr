@@ -6,10 +6,10 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto h5">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to 'Edit profile', edit_user_registration_path, class: 'nav-link', id: "edit_profile_link" %>
+          <%= link_to 'Edit Profile', edit_user_registration_path, class: 'nav-link', id: "edit_profile_link" %>
         </li>
         <li class="nav-item">
           <% if Mentor.find_by user: current_user %>

@@ -1,76 +1,73 @@
+<div class="container">
+    <%if @sessions_as_mentor.count() > 0 %>
+        <h1 class="display-4">Mentor Sessions</h1>
+        <div class="row pb-3">
+            <table class="table table-striped col-md-12" id="sessions_as_mentor">
+                <thead>
+                    <tr class="lead">
+                        <th>Mentor</th>
+                        <th>Mentee</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @sessions_as_mentor.each do |session| %>
+                    <tr class="lead">
+                        <td><%= session.mentor.user.username %></td>
+                        <td><%= session.mentee.user.username %></td>
+                        <%= content_tag :td, class: (session.status == 'requested' ? 'text-secondary font-weight-bold' : 'text-info font-weight-bold') do %>
+                            <%= session.status %>
+                        <% end %>
+                        <td>
+                            <% if session.requested? %>
+                                <%= link_to 'Approve', sessions_approve_path(:session_id => session.id), :class => 'btn btn-primary col-lg-3', id: "approve_session_link" %>
+                            <% end %>
+                            <% if !(session.terminated?) %>
+                                <%= link_to 'Cancel', sessions_cancel_path(:session_id => session.id), :class => 'btn btn-danger col-lg-3', id: "cancel_session_link" %>
+                            <% end %>
+                        </td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    <%end%>
 
-<%if @sessions_as_mentor.count() > 0 %>
-    <h1>Mentor Sessions</h1>
-    <table class="table table-striped col-md-12" id="sessions_as_mentor">
-    <thead>
-        <tr>
-        <th>Mentor</th>
-        <th>Mentee</th>
-        <th>Status</th>
-        <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @sessions_as_mentor.each do |session| %>
-        <tr>
-            <td>
-            <%= session.mentor.user.username %>
-            </td>
-            <td>
-            <%= session.mentee.user.username %>
-            </td>
-            <td>
-            <%= session.status %>
-            </td>
-            <td>
-                <% if session.requested? %>
-                    <%= link_to 'Approve', sessions_approve_path(:session_id => session.id), :class => 'btn btn-primary col-2', id: "approve_session_link" %>
-                <% end %>
-                <% if !(session.terminated?) %>
-                    <%= link_to 'Cancel', sessions_cancel_path(:session_id => session.id), :class => 'btn btn-primary col-2', id: "cancel_session_link" %>
-                <% end %>
-            </td>
-        </tr>
-        <% end %>
-    </tbody>
-    </table>
-<%end%>
-
-<%if @sessions_as_mentee.count() > 0 %>
-    <h1>Mentee Sessions</h1>
-    <table class="table table-striped col-md-12" id="sessions_as_mentee">
-    <thead>
-        <tr>
-        <th>Mentor</th>
-        <th>Mentee</th>
-        <th>Status</th>
-        <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @sessions_as_mentee.each do |session| %>
-        <tr>
-            <td>
-            <%= session.mentor.user.username %>
-            </td>
-            <td>
-            <%= session.mentee.user.username %>
-            </td>
-            <td>
-            <%= session.status %>
-            </td>
-            <td>
-                <% if !(session.terminated?) %>
-                    <%= link_to 'Cancel', sessions_cancel_path(:session_id => session.id), :class => 'btn btn-primary col-2', id: "cancel_session_link" %>
-                <% end %>
-            </td>
-        </tr>
-        <% end %>
-    </tbody>
-    </table>
-    
-<%else%>
-    <h1> No sessions requested or in progress. </h1>
-    <h3> <%= link_to 'View catalog to create a session', catalog_index_path, class: 'nav-link', id: "catalog_link" %> </h3>
-
-<%end%>
+    <%if @sessions_as_mentee.count() > 0 %>
+        <h1 class="display-4 pt-3 border-top">Mentee Sessions</h1>
+        <div class="row">
+            <table class="table table-striped col-md-12" id="sessions_as_mentee">
+                <thead>
+                    <tr class="lead">
+                        <th>Mentor</th>
+                        <th>Mentee</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @sessions_as_mentee.each do |session| %>
+                        <tr class="lead">
+                            <td><%= session.mentor.user.username %></td>
+                            <td><%= session.mentee.user.username %></td>
+                            <%= content_tag :td, class: (session.status == 'requested' ? 'text-secondary font-weight-bold' : 'text-info font-weight-bold') do %>
+                                <%= session.status %>
+                            <% end %>
+                            <td>
+                                <% if !(session.terminated?) %>
+                                    <%= link_to 'Cancel', sessions_cancel_path(:session_id => session.id), :class => 'btn btn-primary col-lg-4', id: "cancel_session_link" %>
+                                <% end %>
+                            </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    <%else%>
+        <h1 class="display-3 pt-3 text-center">No sessions requested or in progress.</h1>
+        <h3 class="display-4 pt-2 text-center">
+            <%= link_to 'View catalog to create a session', catalog_index_path, class: 'link', id: "catalog_link" %>
+        </h3>
+    <%end%>
+</div>

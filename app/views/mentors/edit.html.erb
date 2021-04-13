@@ -5,62 +5,65 @@
     </h1>
     <%= form_with model: @mentor do |f| %>
         <div class="form-group">
-            <%= f.label :Introduction %><br />
+            <%= f.label :Introduction, class: 'h5' %><br />
             <%= f.text_area :profile, id: "profile_edit", class: 'form-control', required: true %>
         </div>
 
-        <div>
+        <div class="form-group">
+            <%= f.label :resume, class: 'h5 mb-1' %><br />
+            <i class="text-muted">( Upload your resume! )</i>
             <% if @mentor.resume.attached? %>
-                <%= link_to 'Download Resume', rails_blob_path(@mentor.resume, disposition: "attachment") %>
-            <% end %>
-        </div>
-
-        <div>
-            <% if @mentor.resume.attached? %>
-                (Upload your resume below!)
-                <%= f.file_field :resume, class: 'form-control', include_blank: false %>
-                <br />
+                <div class="border rounded px-3 py-2 mt-2">
+                    <%= f.file_field :resume, include_blank: false %>
+                </div>    
             <% else %>
-                (Upload your resume below!)
-                <%= f.file_field :resume, class: 'form-control', include_blank: false, required: true %>
-                <br />
+                <div class="border rounded px-3 py-2 mt-2">
+                    <%= f.file_field :resume, include_blank: false, required: true %>
+                </div>
+            <% end %>
+            <% if @mentor.resume.attached? %>
+                <div>
+                    <%= link_to 'Download Resume', rails_blob_path(@mentor.resume, disposition: "attachment") %>
+                </div>
             <% end %>
         </div>
 
         <div class="form-group">
-            <%= f.label :company %><br />
+            <%= f.label :company, class: 'h5' %><br />
             <%= f.text_field :company, id: "company_edit", class: 'form-control' %>
         </div>
 
         <div class="form-group">
-            <%= f.label :location %><br />
-            <%= f.text_field :location, id: "location_edit", class: 'form-control', required: true %>
+            <%= f.label :location, class: 'h5' %><br />
+            <%= f.text_field :location, id: "location_edit", class: 'form-control' %>
         </div>
 
         <div class="form-group">
-            <%= f.label :website %><br />
+            <%= f.label :website, class: 'h5' %><br />
             <%= f.text_field :website, id: "website_edit", class: 'form-control' %>
         </div>
 
         <div class="form-group">
-            <%= f.label :linkedin %><br />
+            <%= f.label :linkedin, class: 'h5' %><br />
             <%= f.text_field :linkedin, id: "linkedin_edit", class: 'form-control' %>
         </div>
 
         <div class="form-group">
-            <%= f.label :subjects %><br />
+            <%= f.label :subjects, class: 'h5' %><br />
             <%= select_tag 'subjects[]', options_for_select(Subject.all.map{ |u| u.name }, @subjects.map{ |u| u.name }), {:multiple => :multiple, :class => 'form-control js-source-states', :id => 'form-tags'} %>
         </div>
 
         <div class="form-group">
-            <%= f.submit "Save", id: "edit_mentor_profile", class: "btn btn-primary" %>
+            <%= f.submit "Save", id: "edit_mentor_profile", class: "btn btn-primary px-4" %>
         </div>
     <% end %>
 
-    <h3>No Longer Want To Be Mentor?</h3>
-
-    <p>
-        <%= button_to "Quit Mentoring", mentor_path(@mentor), data: { confirm: "Are you sure?" }, method: :delete, id: "delete_mentor_account_button", class: 'btn btn-danger' %>
-    </p>
+    <div class="jumbotron">
+        <h3>No Longer Want To Be Mentor?</h3>
+        <em class="text-muted">( You can re-apply anytime! )</em>
+        <p> 
+            <%= button_to "Quit Mentoring", mentor_path(@mentor), data: { confirm: "Are you sure?" }, method: :delete, id: "delete_mentor_account_button", class: 'btn btn-danger' %>
+        </p>
+    </div>
 
 </div>

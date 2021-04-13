@@ -1,6 +1,6 @@
 <div class="container">
-  <h1>Mentor Match</h1>
-  <p><center>Choose a category from below to exclusively find mentors whose specializations align with your interests</center></p>
+  <h1 class="display-4">Mentor Match</h1>
+  <p class="lead text-center">Choose a category from below to exclusively find mentors whose specializations align with your interests</p>
   <div style="margin:10px; display:flex; align-items:center; justify-content: center; margin-bottom:30px">
     <%= form_tag(catalog_index_path, method: :get) do %>
       <div class="input-group">
@@ -14,16 +14,17 @@
 
   <div class="row">
     <div class="col-sm">
-      <div class="card bg-light mb-3" style="width: 18rem; margin-left:auto; margin-right:auto;">
-        <div class="card-header"><center>All</center></div>
-          <%= link_to "View", catalog_path(-1), class: "btn btn-info", id: "more_info_button" %>
+      <div class="card bg-light mb-3 p-2" style="width: 18rem; margin-left:auto; margin-right:auto;">
+        <div class="card-header text-center h5 mb-2 border-0">All</div>
+        <%= link_to "View", catalog_path(-1), class: "btn btn-info", id: "more_info_button" %>
+        </div>
       </div>
     </div>
 
     <% @categories.each_with_index do |category, index| %>
       <div class="col-sm">
-        <div class="card bg-light mb-3" style="width: 18rem; margin-left:auto; margin-right:auto;">
-          <div class="card-header"><center><%= category.name %> </center></div>
+        <div class="card bg-light mb-3 p-2" style="width: 18rem; margin-left:auto; margin-right:auto;">
+          <div class="card-header text-center h5 mb-2 border-0"><%= category.name %></div>
             <%= link_to "View", catalog_path(category.id), class: "btn btn-info", id: "more_info_button" %>
         </div>
       </div>
