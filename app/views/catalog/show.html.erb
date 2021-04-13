@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>All Mentors</h1>
+  <h1>Mentors: <%=@subject_name%></h1>
   <div style="margin:10px; display:flex; align-items:center; justify-content: center;">
     <%= form_tag(catalog_index_path, method: :get) do %>
       <div class="input-group">
@@ -25,9 +25,9 @@
             <h5 class="card-title"><%= user.username %></h5>
             <p class="card-text">
               <%= user.profile %> <br/>
-              Subjects: <%= user.subjects.count %>
+              Subjects:
               <% user.subjects.map do |sub| %>
-                <%= sub.name %>
+                <%= sub.name %>,
               <% end %>
             </p>
             <%= link_to "More Info", user_path(user.user_id), class: "btn btn-primary", id: "more_info_button" %>

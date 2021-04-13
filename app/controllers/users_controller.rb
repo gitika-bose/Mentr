@@ -5,5 +5,5 @@ class UsersController < ApplicationController
     id = params[:id]
     @user = Mentor.find_by user_id: id
   end
-  
+
 end
