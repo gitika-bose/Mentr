@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @import "bootstrap/dist/css/bootstrap";
 
-.title {
+.hometitle {
     padding-top: 60px;
     padding-right: 50px;
     text-align: right;
@@ -40,10 +40,10 @@
 .parallax {
     /* The image used */
     background-image: url("https://files.consumerfinance.gov/f/images/cfpb_revised-journey_youth-fin-ed_FCM_illustrat.original.png");
-  
+
     /* Full height */
     height: 870px;
-  
+
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
