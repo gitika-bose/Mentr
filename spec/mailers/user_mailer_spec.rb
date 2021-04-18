@@ -3,7 +3,6 @@ require "rails_helper"
 RSpec.describe UserMailer, type: :mailer do
   describe "email for a session booking" do
 
-
     it "book session" do
       User.create(username:"test_user1", email:"gitika.bose@gmail.com", password:"qwertyuiop")
       User.create(username:"test_mentor1", email:"gb2606@columbia.edu", password:"qwertyuiop")
@@ -16,6 +15,6 @@ RSpec.describe UserMailer, type: :mailer do
       expect(mail.reply_to).to eq(["gitika.bose@gmail.com"])
       expect(mail.from).to eq(["gb2606@columbia.edu"])
     end
-    
+
   end
 end
