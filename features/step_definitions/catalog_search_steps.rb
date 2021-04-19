@@ -30,6 +30,11 @@ When /^(?:|I )click back to all mentors$/ do
     click_link("back_to_catalog_link")
 end
 
+When /^(?:|I )click (.+) categories$/ do |cat|
+    link = cat + "_category_info_button"
+    click_link(link)
+end
+
 Then /^(?:I )should find (.+) results$/ do |tutor|
     if page.respond_to? :should
         page.should have_content(tutor)

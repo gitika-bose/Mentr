@@ -8,9 +8,14 @@ $('#form-tags').ready(function () {
     })
 });
 
+document.addEventListener("turbolinks:load", function() {
+  $('#form-tags').select2({
+      closeOnSelect: false
+  })
+})
 
-window.onload = function () {
-    $('#form-tags').select2({
-        closeOnSelect: false
-    })
-};
+// window.onload = function () {
+//     $('#form-tags').select2({
+//         closeOnSelect: false
+//     })
+// };

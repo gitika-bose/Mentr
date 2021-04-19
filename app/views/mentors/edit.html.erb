@@ -15,7 +15,7 @@
             <% if @mentor.resume.attached? %>
                 <div class="border rounded px-3 py-2 mt-2">
                     <%= f.file_field :resume, include_blank: false %>
-                </div>    
+                </div>
             <% else %>
                 <div class="border rounded px-3 py-2 mt-2">
                     <%= f.file_field :resume, include_blank: false, required: true %>
@@ -50,7 +50,7 @@
 
         <div class="form-group">
             <%= f.label :subjects, class: 'h5' %><br />
-            <%= select_tag 'subjects[]', options_for_select(Subject.all.map{ |u| u.name }, @subjects.map{ |u| u.name }), {:multiple => :multiple, :class => 'form-control js-source-states', :id => 'form-tags'} %>
+            <%= select_tag 'subjects[]', options_for_select(Subject.all.map{ |u| u.name }, @subjects.map{ |u| u.name }), {:multiple => :multiple, :class => 'form-control js-source-states', :id => 'form-tags'}%>
         </div>
 
         <div class="form-group">
@@ -61,7 +61,7 @@
     <div class="jumbotron">
         <h3>No Longer Want To Be Mentor?</h3>
         <em class="text-muted">( You can re-apply anytime! )</em>
-        <p> 
+        <p>
             <%= button_to "Quit Mentoring", mentor_path(@mentor), data: { confirm: "Are you sure?" }, method: :delete, id: "delete_mentor_account_button", class: 'btn btn-danger' %>
         </p>
     </div>

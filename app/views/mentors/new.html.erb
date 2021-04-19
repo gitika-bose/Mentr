@@ -9,7 +9,7 @@
 
     <div>
         (Upload your resume below!)
-        <%= f.file_field :resume, class: 'form-control', required: true %>
+        <%= f.file_field :resume, class: 'form-control' %>
         <br />
     </div>
 
@@ -17,12 +17,12 @@
         <%= f.label :company %><br />
         <%= f.text_field :company, id: "company_edit", class: 'form-control'  %>
     </div>
-    
+
     <div class="field">
         <%= f.label :location %><br />
         <%= f.text_field :location, id: "location_edit", class: 'form-control' %>
     </div>
-    
+
     <div class="field">
         <%= f.label :website %><br />
         <%= f.text_field :website, id: "website_edit", class: 'form-control'  %>

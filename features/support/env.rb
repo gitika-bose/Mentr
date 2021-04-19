@@ -8,7 +8,7 @@ SimpleCov.start 'rails'
 # files.
 
 require 'cucumber/rails'
-
+include Capybara::Select2
 # frozen_string_literal: true
 
 # Capybara defaults to CSS3 selectors rather than XPath.

@@ -10,8 +10,18 @@ RSpec.describe CatalogController, type: :controller  do
     end
     context "user is signed in" do
       login_user
-      it "should render profile page" do
+      it "should render all categories" do
         get :index, params: {}
+        expect(response).to have_http_status(200)
+      end
+    end
+  end
+
+  describe "GET #catalog show" do
+    context "user is signed in and wishes to view specific category" do
+      login_user
+      it "should render all mentors" do
+        get :show, params: {id:-1}
         expect(response).to have_http_status(200)
       end
     end

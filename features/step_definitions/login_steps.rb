@@ -17,12 +17,13 @@ When /^(?:|I )sign in with correct credentials$/ do
     fill_in("password_login", :with => "bob1876")
 end
 
-When /^(?:|I )register a temporary mentor$/ do
+When /^(?:|I )register a temporary mentor in (.+)$/ do |subject|
     fill_in("username_email_login", :with => "bil@mentr.me")
     fill_in("password_login", :with => "PoPcornHorse")
     click_button("login_button")
     click_link("new_mentor_profile_link")
     fill_in("profile_edit", :with => "hewoooo")
+    select2("Psychology", xpath: '/html/body/div[1]/form/div[7]/span', search: true)
     click_button("submit_mentor_register")
     click_link("logout_link")
     click_link("login_link")
