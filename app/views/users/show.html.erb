@@ -1,5 +1,6 @@
 <!--  app/views/movies/show.html.erb -->
 <div class="container">
+
     <div class="main-body">
 
           <div class="row gutters-sm">
@@ -20,8 +21,8 @@
                       <% if @user.location and @user.location !=""%>
                       <p class="text-muted font-size-sm"><%= @user.location %></p>
                       <% end %>
-                      <%= link_to 'Request a session', sessions_create_path(:mentor_id => @user.user_id), :class => 'btn btn-primary', id: "request_session_link" %>
-                      <button class="btn btn-outline-primary">Message</button>
+                      <%= link_to 'Request a session', sessions_create_path(:mentor_id => @user.user_id), :class => 'btn btn-info', id: "request_session_link" %>
+                      <button class="btn btn-outline-info">Message</button>
                     </div>
                   </div>
                 </div>
@@ -97,5 +98,8 @@
                 </div>
               </div>
           </div>
+        </div>
+        <div style="display:flex; align-items:center; justify-content: center;">
+          <%= link_to "View All Mentors", catalog_index_path, class: "btn btn-success", id: "more_info_button", style: "margin: 0.5rem" %>
         </div>
     </div>

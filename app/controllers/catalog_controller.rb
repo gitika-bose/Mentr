@@ -12,7 +12,10 @@ class CatalogController < ApplicationController
   def show
     if params[:search] != nil and params[:search] != ""
       @subject_name = "search " + params[:search]
-      @mentors = Mentor.withUserInfo.where("profile LIKE ? ", "%#{params[:search]}%").or(Mentor.withUserInfo.where("LOWER(username) LIKE ? ", "%#{params[:search].downcase}%")).or(Mentor.withUserInfo.where("LOWER(profile) LIKE ? ", "%#{params[:search].downcase}%"));
+      @term = params[:search]
+      @mentors = Mentor.filter_by_search(@term)
+
+      # @mentors = Mentor.where("LOWER(email) LIKE ? ", "%#{params[:search]}%").or(Mentor.withUserInfo.where("LOWER(username) LIKE ? ", "%#{params[:search].downcase}%")).or(Mentor.withUserInfo.where("LOWER(profile) LIKE ? ", "%#{params[:search].downcase}%"));
     else
       id = params[:id]
       if id == "-1"

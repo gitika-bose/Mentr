@@ -21,6 +21,24 @@ class Mentor < ApplicationRecord
         linkedin
     end
 
+    scope :filter_by_search, -> (term) do
+      @subjects = Subject.all
+      @mentor_ids = []
+      @subjects.each do |sub|
+        if sub.name.downcase[term.downcase]
+          sub.mentors.each do |mentor|
+            @mentor_ids.push(mentor.id)
+          end
+        end
+      end
+      Mentor.all.each do |mntr|
+        if mntr.user.username.downcase[term.downcase]
+          @mentor_ids.push(mntr.id)
+        end
+      end
+      where(id: @mentor_ids).or(where("LOWER(profile) like ?", "#{term.downcase}%"))
+    end
+
     def self.withUserInfo
         Mentor.select('users.id AS user_id,
             users.username AS username,
