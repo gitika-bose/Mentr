@@ -14,8 +14,6 @@ class CatalogController < ApplicationController
       @subject_name = "search " + params[:search]
       @term = params[:search]
       @mentors = Mentor.filter_by_search(@term)
-
-      # @mentors = Mentor.where("LOWER(email) LIKE ? ", "%#{params[:search]}%").or(Mentor.withUserInfo.where("LOWER(username) LIKE ? ", "%#{params[:search].downcase}%")).or(Mentor.withUserInfo.where("LOWER(profile) LIKE ? ", "%#{params[:search].downcase}%"));
     else
       id = params[:id]
       if id == "-1"
