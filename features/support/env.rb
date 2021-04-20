@@ -60,3 +60,10 @@ end
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
+
+#Warden Helpers
+include Warden::Test::Helpers
+Warden.test_mode!
+After do
+  Warden.test_reset!                                                                                                                                                           
+end

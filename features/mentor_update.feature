@@ -5,17 +5,10 @@ Feature: users can become mentors and update mentor info
   approved, and I want an easier way to sign up.
 
 Background: a few mentors and mentees are using the site
-  Given the following users exists
-
-    | username | email                   | password            |
-    | bob      | bob@mentr.me            | bob1876             |
-    | bil      | bil@mentr.me            | PoPcornHorse        |
-    | eric     | eric@mentr.me           | 12334567772         |
-    | john     | john23@mentr.me         | QWERTY              |
-    | dillen   | dillen@mentr.me         | PassWord            |
-
-  And I am on the catalog page
+  Given there are 5 users
+  And  I am on the catalog page
   Then 5 seed users should exist
+  And I should be logged out
 
 Scenario: user can become mentor
   When I login

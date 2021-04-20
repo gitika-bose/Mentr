@@ -1,25 +1,18 @@
 Feature: users can find the catalog page and search through tutors
 
-  I am a mentee that would like to be tutored however I am easily
-  overwhelmed by searching for a tutor. I would like to easily
-  search for a tutor in a catalog.
+  As a new mentee who is easily overwhelmed by cumbersome UI
+  I would like to easily search for a tutor in a catalog
+  So that I can find a mentor that suits my need as efficiently as possible
 
 Background: a few mentors and mentees are using the site
-  Given the following users exists
-
-    | username | email                   | password            |
-    | bob      | bob@mentr.me            | bob1876             |
-    | bil      | bil@mentr.me            | PoPcornHorse        |
-    | eric     | eric@mentr.me           | 12334567772         |
-    | john     | john23@mentr.me         | QWERTY              |
-    | dillen   | dillen@mentr.me         | PassWord            |
-
-  And I am on the catalog page
+  Given there are 5 users
+  And  I am on the catalog page
   Then 5 seed users should exist
+  And I should be logged out
 
 Scenario: user can become tutor and view tutor info
-  When I login
-  And I click become mentor
+  When I login as testuser 1
+  And I am on the become a mentor page
   And I add mentor info for Psychology
   And I click sign up as mentor button
   And I click catalog

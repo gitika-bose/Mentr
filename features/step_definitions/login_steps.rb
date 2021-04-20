@@ -1,20 +1,10 @@
-require 'uri'
-require 'cgi'
-require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
 
-Given /^(?:|I )am on (.+)$/ do |page_name|
-    visit path_to(page_name)
-  end
+############## FUNCTIONS TO KILL ##############################
 
-When /^(?:|I )sign in as testuser (\d*)$/ do |n|
-  fill_in("username_email_login", :with => test_username(n.to_i))
-  fill_in("password_login", :with => test_userpassword(n.to_i))
+When /^(?:|I )(?:sign in|login) as temporary mentor$/ do
+  fill_in("username_email_login", :with => "bil@mentr.me")
+  fill_in("password_login", :with => "PoPcornHorse")
   click_button("login_button")
-end
-
-When /^(?:|I )sign in with correct credentials$/ do
-    fill_in("username_email_login", :with => "bob@mentr.me")
-    fill_in("password_login", :with => "bob1876")
 end
 
 When /^(?:|I )register a temporary mentor in (.+)$/ do |subject|
@@ -29,35 +19,6 @@ When /^(?:|I )register a temporary mentor in (.+)$/ do |subject|
     click_link("login_link")
 end
 
-When /^(?:|I )login as temporary mentor$/ do
-    fill_in("username_email_login", :with => "bil@mentr.me")
-    fill_in("password_login", :with => "PoPcornHorse")
-    click_button("login_button")
-end
-
-When /^(?:|I )navigate to sign in$/ do
-  click_link("login_link")
-end
-
-
-When /^(?:|I )click sign in$/ do
-  click_button("login_button")
-end
-
-When /^(?:|I )login$/ do
-  fill_in("username_email_login", :with => "bob@mentr.me")
-  fill_in("password_login", :with => "bob1876")
-  click_button("login_button")
-end
-
-When /^(?:|I )click catalog$/ do
-  click_link("catalog_link")
-end
-
-When /^(?:|I )click become mentor$/ do
-  click_link("new_mentor_profile_link")
-end
-
 When /^(?:|I )click update mentor$/ do
   click_link("edit_mentor_profile_link")
 end
@@ -70,23 +31,52 @@ When /^(?:|I )click sessions$/ do
   click_link("sessions_link")
 end
 
-When /^(?:|I )(?:|click )(?:logout|sign out)$/ do
-    click_link("logout_link")
-end
-
 Then /^(?:|I )should be on (.+)$/ do |page_name|
-    current_path = URI.parse(current_url).path
-    if current_path.respond_to? :should
-      current_path.should == path_to(page_name)
-    else
-      assert_equal path_to(page_name), current_path
-    end
+  current_path = URI.parse(current_url).path
+  if current_path.respond_to? :should
+    current_path.should == path_to(page_name)
+  else
+    assert_equal path_to(page_name), current_path
+  end
 end
 
-Then /^(?:|I )should be logged (?:in|on)$/ do
+###############################
+
+
+When /^(?:|I )(?:sign in|login) as testuser (\d+)$/ do |n|
+  fill_in("username_email_login", :with => test_username(n.to_i))
+  fill_in("password_login", :with => test_userpassword(n.to_i))
+  click_button("login_button")
+end
+
+When /^(?:|I )(?:|click )(?:sign in|login)$/ do
+  click_button("login_button")
+end
+
+When /^(?:|I )(?:|click )(?:sign out|logout)$/ do
+  click_link("logout_link")
+end
+
+When /^(?:|I )(?:sign in|login) with (username|password) for testuser (\d+)$/ do |param, n|
+  if param == :username
+    fill_in("username_email_login", :with => test_username(n.to_i))
+  elsif param == :password
+    fill_in("password_login", :with => test_userpassword(n.to_i))
+  end
+end
+
+When /^(?:|I am )(?:signed|logged) in as testuser (\d+)$/ do |n|
+  login_as test_user n.to_i
+end
+
+When /^(?:|I am )(?:signed|loged) in$/ do
+  logout(:user)
+end
+
+Then /^(?:|I )should be (?:logged|signed) (?:in|on)$/ do
   has_link?('Loggout')
 end
 
-Then /^(?:|I )should be logged (?:off|out)$/ do
+Then /^(?:|I )should be (?:logged|signed) (?:off|out)$/ do
   has_link?('Login')
 end

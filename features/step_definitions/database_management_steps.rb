@@ -24,8 +24,12 @@ def test_userpassword (n)
     base_passwords[n % m]
 end
 
+def test_user (n)
+    FactoryBot.build(:user, :id => n, :username => test_username(n), :email => test_useremail(n), :password => test_userpassword(n))
+end
+
 def add_test_user (n)
-    User.create(:username => test_username(n), :email => test_useremail(n), :password => test_userpassword(n))
+    FactoryBot.create(:user, :id => n, :username => test_username(n), :email => test_useremail(n), :password => test_userpassword(n))
 end
 
 Given /^the following users exists/ do |user_table|
