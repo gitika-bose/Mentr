@@ -1,8 +1,15 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  # TODO:
+  # action-mailer
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_options = { from: 'no-reply@example.com' }
   config.action_mailer.default_url_options = { host: 'polar-forest-34288.herokuapp.com' }
+  # config.action_mailer.perform_caching = false
+
+  # active-storage
   config.active_storage.service = :amazon
 
   # Settings specified here will take precedence over those in config/application.rb.
@@ -62,8 +69,6 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "mentrme_production"
-
-  config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
