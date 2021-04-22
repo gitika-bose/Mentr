@@ -24,7 +24,7 @@
                                 <%= link_to 'Approve', sessions_approve_path(:session_id => session.id), :class => 'btn btn-primary col-lg-3', id: "approve_session_link" %>
                             <% end %>
                             <% if !(session.terminated?) %>
-                                <%= link_to 'Cancel', sessions_cancel_path(:session_id => session.id), :class => 'btn btn-danger col-lg-3', id: "cancel_session_link" %>
+                                <%= link_to 'Cancel', sessions_cancel_path(:session_id => session.id), :class => 'btn btn-danger col-lg-4', id: "cancel_session_link" %>
                             <% end %>
                         </td>
                     </tr>
