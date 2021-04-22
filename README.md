@@ -30,6 +30,7 @@ https://github.com/gitika-bose/Mentr
 
 * Tag (for proj-iter1): v1.0
 * Tag (for proj-iter2): v2.0
+* Tag (for proj-iter3): v3.0
 
 ## Summary
 
@@ -44,6 +45,7 @@ SaaS Product Features
 * Users can keep track of mentor request/cancellation history via the sessions page
 * Users can edit their username, email, or password as needed 
 * Users can delete their accounts 
+* As a next step, we are working on adding more verification for users to become mentors (eg. background check)
 
 ## Coverage
 
