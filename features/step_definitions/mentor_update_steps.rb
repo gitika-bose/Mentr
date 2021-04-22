@@ -8,10 +8,11 @@ When /^(?:|I )add mentor info for (.+)$/ do |subject|
     fill_in("location_edit", :with => "NYC")
     fill_in("website_edit", :with => "https://www.google.com/")
     fill_in("linkedin_edit", :with => "https://www.linkedin.com/")
+    find("option option[value='Probability']").select_option
 end
 
 When /^(?:|I )click sign up as mentor button$/ do
-    click_link("submit_mentor_register")
+    click_button("submit_mentor_register")
 end
 
 When /^(?:|I )click save mentor button$/ do
