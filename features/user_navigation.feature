@@ -1,27 +1,21 @@
 Feature: user can navigate to and edit their profile
 
-    As a very curious and smart mentee I would like to
-    create a profile that I can personalize.
+    As a maticulous user
+    I would like to be able to navigate through the website
+    So that I could understand all the features available for me
 
-Background: one user is using the site
-  Given the following users exists
-
-    | username | email                   | password            |
-    | bob      | bob@mentr.me            | bob1876             |
-    | bil      | bil@mentr.me            | PoPcornHorse        |
-    | eric     | eric@mentr.me           | 12334567772         |
-    | john     | john23@mentr.me         | QWERTY              |
-    | dillen   | dillen@mentr.me         | PassWord            |
-
-  And  I am on the login page
-  Then 5 seed users should exist
+Background: 5 users are using the site
+  Given there are 5 users
+  And  I am on the "login" page
+  Then 5 users should exist
+  And I should be logged out
 
 Scenario: user can access catalog
-  When I login
-  And I click catalog
-  Then I should be on the catalog page
+  When I login as testuser 1
+  And I navigate to the "catalog" page
+  Then I should be on the "catalog" page
 
 Scenario: user can access edit profile
-  When I login
-  And I click edit profile
-  Then I should be on the edit profile page
+  When I login as testuser 1
+  And I navigate to the "edit profile" page
+  Then I should be on the "edit profile" page
