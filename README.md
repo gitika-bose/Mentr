@@ -44,6 +44,7 @@ SaaS Product Features
 * Users can keep track of mentor request/cancellation history via the sessions page
 * Users can edit their username, email, or password as needed 
 * Users can delete their accounts 
+* As a next step, we are working on adding more verification for users to become mentors (eg. background check)
 
 ## Coverage
 
