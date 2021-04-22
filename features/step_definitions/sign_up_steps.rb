@@ -26,13 +26,11 @@ end
 
 Then /^testuser (\d+) should have testpassword (\d+)$/ do |n, m|
   logout(:user)
-#  user = User.find_by_username(test_username n.to_i)
   visit path_to("login")
   fill_in("username_email_login", :with => test_username(n.to_i))
   fill_in("password_login", :with => test_userpassword(m.to_i))
   click_button("login_button")
   has_link?('Loggout')
-  #expect(user.password).to be(test_userpassword m.to_i)
 end
 
 When /^(?:I )fill in duplicate information$/ do

@@ -17,14 +17,14 @@ module NavigationHelpers
 
         when /^home$/ then root_path
         when /^login$/ then new_user_session_path
-        when /^user$/ then user_profile_path(user)
+        when /^user$/ then user_profile_path
         when /^sign\s(up|in)$/ then new_user_registration_path
         when /^catalog$/ then catalog_path
         when /^edit\sprofile$/ then edit_user_path(user)
         when /^become\smentor$/ then new_mentor_path
-        when /^update\smentor$/ then edit_mentor_path(user)
-        when /^edit\s(user)?\spassword$/ then edit_mentor_path(user)
-        when /^delete\s(user|account)$/ then edit_mentor_path(user)
+        when /^(update\smentor|edit\smentor\sprofile)$/ then edit_mentor_path
+        when /^edit\s(user)?\spassword$/ then edit_mentor_path
+        when /^delete\s(user|account)$/ then edit_mentor_path
 
         # Add more mappings here.
         # Here is an example that pulls values out of the Regexp:

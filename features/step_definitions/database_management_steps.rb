@@ -38,9 +38,28 @@ Given /^the following users exists/ do |user_table|
     end
 end
 
-Given /^there are (\d*) users$/ do |n|
+Given /^there are (\d+) users$/ do |n|
     for i in 1..n.to_i
         add_test_user i
+    end
+end
+
+Given /^testuser (\d+) is a mentor$/ do |n|
+    user = User.find_by_username(test_username n.to_i)
+    if not user
+        add_test_user n.to_i
+        user = User.find_by_username(test_username n.to_i)
+    end
+    mentor = Mentor.find_by_user_id(user.id)
+    if not mentor
+        Mentor.create(:user => user)
+    end
+end
+
+Given /^there are (\d*) mentor(?:|s)$/ do |n|
+    for i in 1..n.to_i
+        user = User.find_by_username(test_username i)
+        Mentor.create(:user => user)
     end
 end
 
