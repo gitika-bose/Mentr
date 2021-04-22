@@ -19,10 +19,10 @@ Scenario: user can become tutor and view tutor info
   And I add mentor info for profile_edit
   And I click sign up as mentor button
   And I click catalog
-  And I search for bob
+  And I search for testuser 1
   And I click search
   And I click more info
-  Then I should find bob results
+  Then I should find testuser 1 in results
 
 Scenario: user can't search for other mentees
   When I login

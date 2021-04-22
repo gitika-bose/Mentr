@@ -4,6 +4,7 @@ require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "pat
 
 When /^(?:|I )search for (.+)$/ do | query |
     fill_in("catalog_search", :with => query)
+    click_button("catalog_search_button")
 end
 
 When /^(?:|I )click search$/ do
@@ -35,13 +36,23 @@ When /^(?:|I )click (.+) categories$/ do |cat|
     click_link(link)
 end
 
-Then /^(?:I )should find (.+) results$/ do |tutor|
+Then /^(?:I )should find "(.+)" results$/ do |tutor|
     if page.respond_to? :should
         page.should have_content(tutor)
     else
       assert page.has_content?(tutor)
     end
 end
+
+Then /^(?:I )should find testuser (\d*) results$/ do |n|
+    tutor = test_username n.to_i
+    if page.respond_to? :should
+        page.should have_content(tutor)
+    else
+      assert page.has_content?(tutor)
+    end
+end
+
 
 Then /^(?:I )should not find (.+) results$/ do |tutor|
     if page.respond_to? :should
