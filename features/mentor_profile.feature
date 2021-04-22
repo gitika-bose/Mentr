@@ -20,7 +20,7 @@ Scenario: Mentor can add professional details on mentor page
     Then testuser 1 should have mentor profile info 2
 
 Scenario: Mentor can add or remove subjects they want to teach
-    When I am on the "edit subjects" page
+    When I navigate to the "edit subjects" page
     And I select subject 1
     And I select subject 2
     And I add subjects

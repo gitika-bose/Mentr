@@ -24,9 +24,26 @@ Given /^(?:|I )(?:navigate|return) to (?:|the )"([^"]*)"(?:| page)$/ do |page_na
     when /^edit\s(user)?\spassword$/ then click_link("edit_profile_link")
     when /^delete\s(user|account)$/ then click_link("edit_profile_link")
     when /^sessions$/ then click_link("sessions_link")
+    when /^edit\ssubjects$/ then click_link("edit_profile_link")
   else
     raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
               "Now, go and add a mapping in #{__FILE__}"
+  end
+end
+
+Then /^(?:|I )should be on (?:|the )"([^"]*)"(?:| page)$/ do |page_name|
+  current_path = URI.parse(current_url).path
+  case page_name
+    when /^catalog$/ then 
+      expect(current_path.to_s).to include("catalog")
+    when /^edit\sprofile$/ then
+      expect(current_path.to_s).to include("edit")
+  else
+    if current_path.respond_to? :should
+      current_path.should == path_to(page_name)
+    else
+      assert_equal path_to(page_name), current_path
+    end
   end
 end
 
