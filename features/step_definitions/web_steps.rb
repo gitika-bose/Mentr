@@ -19,7 +19,7 @@ Given /^(?:|I )(?:navigate|return) to (?:|the )"([^"]*)"(?:| page)$/ do |page_na
     when /^(sign\sin|login)$/ then click_link("login_link")
     when /^catalog$/ then click_link("catalog_link")
     when /^edit\sprofile$/ then click_link("edit_profile_link")
-    when /^become\smentor$/ then click_link("new_mentor_profile_link")
+    when /^become\s(a\s)?mentor$/ then click_link("new_mentor_profile_link")
     when /^(update\smentor|edit\smentor\sprofile)$/ then click_link("edit_profile_link")
     when /^edit\s(user)?\spassword$/ then click_link("edit_profile_link")
     when /^delete\s(user|account)$/ then click_link("edit_profile_link")

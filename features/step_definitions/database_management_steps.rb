@@ -44,7 +44,7 @@ Given /^there are (\d+) users$/ do |n|
     end
 end
 
-Given /^testuser (\d+) is a mentor$/ do |n|
+Given /^testuser (\d+) is (?:|registered as )a mentor$/ do |n|
     user = User.find_by_username(test_username n.to_i)
     if not user
         add_test_user n.to_i
@@ -53,6 +53,18 @@ Given /^testuser (\d+) is a mentor$/ do |n|
     mentor = Mentor.find_by_user_id(user.id)
     if not mentor
         Mentor.create(:user => user)
+    end
+end
+
+Given /^testuser (\d+) is (?:|registered as )a mentee$/ do |n|
+    user = User.find_by_username(test_username n.to_i)
+    if not user
+        add_test_user n.to_i
+        user = User.find_by_username(test_username n.to_i)
+    end
+    mentor = Mentee.find_by_user_id(user.id)
+    if not mentor
+        Mentee.create(:user => user)
     end
 end
 

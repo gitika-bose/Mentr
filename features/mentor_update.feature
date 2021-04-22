@@ -6,13 +6,15 @@ Feature: users can become mentors and update mentor info
 
 Background: a few mentors and mentees are using the site
   Given there are 5 users
-  And  I am on the catalog page
+  And I am logged in as testuser 1
+  And I am on the "home" page
+  And  I navigate to the "catalog" page
   Then 5 seed users should exist
-  And I should be logged out
+  And I should be logged in
 
 Scenario: user can become mentor
-  When I login
-  And I click become mentor
+  When I am on the "home" page
+  And I navigate to the "become a mentor" page
   And I add mentor info for Psychology
   And I click sign up as mentor button
   And I click catalog
@@ -22,8 +24,7 @@ Scenario: user can become mentor
   Then I should find bob results
 
 Scenario: user can update mentor data
-  When I login
-  And I click become mentor
+  When I navigate to the "become a mentor" page
   And I add mentor info for Psychology
   And I click sign up as mentor button
   And I click update mentor
@@ -34,8 +35,7 @@ Scenario: user can update mentor data
   Then I should find changed results
 
 Scenario: user can delete mentor data
-  When I login
-  And I click become mentor
+  When I navigate to the "become a mentor" page
   And I add mentor info for Psychology
   And I click sign up as mentor button
   And I click update mentor

@@ -10,7 +10,7 @@ Background: a few mentors and mentees are using the site
   And testuser 2 is registered as a mentee
   And testuser 3 is registered as a mentor
   And testuser 3 is registered as a mentee
-  And I am on the catalog page
+  And I am on the "home" page
   Then 5 seed users should exist
 
 Scenario: user can request a mentor session

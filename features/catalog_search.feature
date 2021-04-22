@@ -10,6 +10,7 @@ Background: a few mentors and mentees are using the site
   And I navigate to "login" page
   And I login as testuser 1
   And I navigate to "catalog" page
+  And "Probability" is a subject
   Then 5 seed users should exist
 
 Scenario: user can become tutor and view tutor info
