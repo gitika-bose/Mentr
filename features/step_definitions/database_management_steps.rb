@@ -45,13 +45,29 @@ Given /^there are (\d*) users$/ do |n|
 end
 
 Given /^testuser (\d*) is registered$/ do |n|
-    add_test_user n
+    if not User.find_by_username(test_username n.to_i)
+        add_test_user n.to_i
+    end
 end
 
 Then /^(.*)(?: seed)? users? should exist$/ do | n_seeds |
     User.count.should be n_seeds.to_i
 end
 
-Then /^testuser (\d*) is registered$/ do |n|
-    User.find_by_name(test_username(n)).exists?
+Then /^testuser (\d*) should (|not )be registered$/ do |n, neg|
+    if neg == "not "
+        expect(User.find_by_username(test_username n.to_i)).to be_nil
+    else
+        expect(User.find_by_username(test_username n.to_i)).not_to be_nil
+    end
+end
+
+Then /^testuser (\d*) should (|not )be (?:|registered as )a mentor$/ do |n, neg|
+    user = User.find_by_username(test_username n.to_i)
+    mentor = (user)? Mentor.find_by_user_id(user.id): nil
+    if neg == "not "
+        expect(mentor).to be_nil
+    else
+        expect(mentor).not_to be_nil
+    end
 end

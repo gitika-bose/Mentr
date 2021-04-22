@@ -10,16 +10,21 @@ module NavigationHelpers
     #
     # step definition in web_steps.rb
     #
-    def path_to(page_name)
+    def path_to(page_name, user = nil)
+        page_name = page_name.match(/^(?:the\s)?(?:Mentre\s)?(.*?)\s?(?:page)?$/).captures[0]
+
         case page_name
 
-        when /^(the )?(Mentre )?home\s?(page)?$/ then root_path
-        when /^(the )?(Mentre )?login\s?(page)?$/ then new_user_session_path
-        when /^(the )?(Mentre )?user\s?(page)?$/ then user_profile_path(User.find_by_username("bob"))
-        when /^(the )?(Mentre )?catalog\s?(page)?$/ then '/catalog'
-        when /^(the )?(Mentre )?edit\sprofile\s?(page)?$/ then '/users/edit'
-        when /^(the )?(Mentre )?become\smentor\s?(page)?$/ then '/mentors/new'
-        when /^(the )?(Mentre )?update\smentor\s?(page)?$/ then '/mentors/edit'
+        when /^home$/ then root_path
+        when /^login$/ then new_user_session_path
+        when /^user$/ then user_profile_path(user)
+        when /^sign\s(up|in)$/ then new_user_registration_path
+        when /^catalog$/ then catalog_path
+        when /^edit\sprofile$/ then edit_user_path(user)
+        when /^become\smentor$/ then new_mentor_path
+        when /^update\smentor$/ then edit_mentor_path(user)
+        when /^edit\s(user)?\spassword$/ then edit_mentor_path(user)
+        when /^delete\s(user|account)$/ then edit_mentor_path(user)
 
         # Add more mappings here.
         # Here is an example that pulls values out of the Regexp:

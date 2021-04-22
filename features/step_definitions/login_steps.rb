@@ -73,6 +73,10 @@ When /^(?:|I am )(?:signed|loged) in$/ do
   logout(:user)
 end
 
+Then /^(?:|I )should be (?:logged|signed) (?:in|on) as testuser (\d+)$/ do |n|
+  expect(page).to have_text("Logged in as #{test_username n.to_i}")
+end
+
 Then /^(?:|I )should be (?:logged|signed) (?:in|on)$/ do
   has_link?('Loggout')
 end

@@ -39,7 +39,3 @@ Scenario: user can navigate to the log in from the root
 Scenario: Unregisted users can not log in
   When I sign in as testuser 6
   Then I should get error "user not found"
-
-Scenario: Quick Debugging
-  When I am logged in as testuser 1
-  Then I should be logged in
