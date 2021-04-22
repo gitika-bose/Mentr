@@ -11,6 +11,16 @@ When /^(?:|I )add mentor info for (.+)$/ do |subject|
     select "Probability", :from => "form-tags"
 end
 
+When /^(?:|I )register as a (?:|temporary )mentor in "(.*)"$/ do |subject_name|
+    fill_in("profile_edit", :with => "changed")
+    fill_in("company_edit", :with => "Google")
+    fill_in("location_edit", :with => "NYC")
+    fill_in("website_edit", :with => "https://www.google.com/")
+    fill_in("linkedin_edit", :with => "https://www.linkedin.com/")
+    select subject_name, :from => "form-tags"
+    click_button("submit_mentor_register")
+end
+
 When /^"(.+)" is a subject$/ do |subject|
     Subject.create(:name => subject)
 end

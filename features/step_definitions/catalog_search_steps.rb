@@ -2,7 +2,14 @@ require 'uri'
 require 'cgi'
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
 
-When /^(?:|I )search for (.+)$/ do | query |
+When /^(?:|I )search for "(.+)"$/ do | query |
+    fill_in("catalog_search", :with => query)
+    click_button("catalog_search_button")
+end
+
+
+When /^(?:|I )search for testuser (\d+)$/ do | n |
+    query = test_username n.to_i
     fill_in("catalog_search", :with => query)
     click_button("catalog_search_button")
 end
@@ -44,7 +51,7 @@ Then /^(?:I )should find "(.+)" results$/ do |tutor|
     end
 end
 
-Then /^(?:I )should find testuser (\d*) results$/ do |n|
+Then /^(?:I )should find testuser (\d+) in results$/ do |n|
     tutor = test_username n.to_i
     if page.respond_to? :should
         page.should have_content(tutor)
