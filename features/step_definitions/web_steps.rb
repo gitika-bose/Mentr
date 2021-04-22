@@ -16,7 +16,7 @@ Given /^(?:|I )(?:navigate|return) to (?:|the )"([^"]*)"(?:| page)$/ do |page_na
       click_button("catalog_search_button")
       page.find('div', text: username).find("more_info_button").click
     when /^(sign\sup|register)$/ then click_link("sign_up_link")
-    when /^(sign\sin|login)$/ then click_link("sign_in_link")
+    when /^(sign\sin|login)$/ then click_link("login_link")
     when /^catalog$/ then click_link("catalog_link")
     when /^edit\sprofile$/ then click_link("edit_profile_link")
     when /^become\smentor$/ then click_link("new_mentor_profile_link")

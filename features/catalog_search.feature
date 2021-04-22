@@ -6,14 +6,16 @@ Feature: users can find the catalog page and search through tutors
 
 Background: a few mentors and mentees are using the site
   Given there are 5 users
-  And  I am on the catalog page
+  And I am on the "home" page
+  And I navigate to "login" page
+  And I login as testuser 1
+  And I navigate to "catalog" page
   Then 5 seed users should exist
-  And I should be logged out
 
 Scenario: user can become tutor and view tutor info
-  When I login as testuser 1
-  And I am on the become a mentor page
-  And I add mentor info for Psychology
+  When I am on the "home" page
+  And I navigate to "become mentor" page
+  And I add mentor info for profile_edit
   And I click sign up as mentor button
   And I click catalog
   And I search for bob
